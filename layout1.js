@@ -6,7 +6,7 @@ root.children[0].style.width='390px';
 root.children[0].style.height='844px';
 root.children[0].style.border='1px solid black';
 
-//* 상단 화면
+//* 상단 컨테이너
 let topDiv = document.createElement('div');
 let topListDiv= document.createElement('div');
 
@@ -24,7 +24,11 @@ for(let i=0;i<3;i++){
 }
 let hamburger = document.createElement('span')
 root.children[0].children[0].children[2].append(hamburger);
+root.children[0].children[0].children[2].children[0].style.width="50%"
+root.children[0].children[0].children[2].children[0].style.height="50%"
 
+
+//*상단 list 컨테이너
 root.children[0].appendChild(topListDiv);
 root.children[0].children[1].style.width="100%";
 root.children[0].children[1].style.height="5%";
