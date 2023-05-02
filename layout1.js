@@ -66,10 +66,12 @@ root.children[0].appendChild(hamburgerListDiv);
 root.children[0].children[2].style.width="350px"
 root.children[0].children[2].style.height="844px"
 root.children[0].children[2].style.position="fixed"
-root.children[0].children[2].style.left="40px"
+root.children[0].children[2].style.left="390px"
 root.children[0].children[2].style.top="0px"
 root.children[0].children[2].style.display="none"
 root.children[0].children[2].style.backgroundColor="red"
+root.children[0].children[2].style.transition="all ease 2s 0s";
+root.children[0].children[2].style.transform="translate(-70%,0)";
 
 //*햄버거 클릭시, list 나오는 기능
 root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
