@@ -3,7 +3,7 @@ let root = document.getElementById('root');
 let mainDiv = document.createElement('div')
 root.appendChild(mainDiv)
 root.children[0].style.width='390px';
-root.children[0].style.height='2000px';
+root.children[0].style.height='844px';
 root.children[0].style.border='1px solid black';
 
 //* 상단 컨테이너
@@ -59,8 +59,7 @@ root.children[0].children[0].style.position="fixed"
 root.children[0].children[1].style.position="fixed"
 root.children[0].children[1].style.top="10%"
 
-//*list 메뉴
-
+//*list 메뉴 설정
 let hamburgerListDiv = document.createElement('div')
 root.children[0].appendChild(hamburgerListDiv);
 root.children[0].children[2].style.width="350px"
@@ -68,11 +67,23 @@ root.children[0].children[2].style.height="844px"
 root.children[0].children[2].style.position="fixed"
 root.children[0].children[2].style.left="390px"
 root.children[0].children[2].style.top="0px"
-root.children[0].children[2].style.display="none"
+root.children[0].children[2].style.display="flex"
+//root.children[0].children[2].style.display="none"
+
 root.children[0].children[2].style.backgroundColor="red"
 root.children[0].children[2].style.transition="all ease 2s 0s";
 root.children[0].children[2].style.transform="translate(-70%,0)";
-a
+//* list 메뉴 디자인
+
+for(let i=0;i<3;i++){
+  let array = ["10%","20%","80%"]
+  let listDiv = document.createElement('div')
+  root.children[0].children[2].appendChild(listDiv);
+  root.children[0].children[2].children[i].style.width="100%";
+  root.children[0].children[2].children[i].style.height=array[i];
+}
+
+
 
 //*햄버거 클릭시, list 나오는 기능
 root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
