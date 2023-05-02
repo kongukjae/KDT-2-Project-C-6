@@ -16,16 +16,41 @@ root.children[0].children[0].style.width="100%";
 root.children[0].children[0].style.height="10%";
 root.children[0].children[0].style.border='1px solid black';
 
+//*상단 컨테이너 3개 div
 for(let i=0;i<3;i++){
   let div = document.createElement('div');
   root.children[0].children[0].appendChild(div)
   root.children[0].children[0].children[i].style.flex='1';
-  root.children[0].children[0].children[i].style.border='1px solid black';
+  root.children[0].children[0].children[i].style.border='1px solid black'; 
 }
-let hamburger = document.createElement('span')
-root.children[0].children[0].children[2].append(hamburger);
-root.children[0].children[0].children[2].children[0].style.width="50%"
-root.children[0].children[0].children[2].children[0].style.height="50%"
+//* 햄버거 메뉴 만드는 flex  
+root.children[0].children[0].children[2].style.display='flex'; 
+for(let i=0;i<3;i++){
+  let hamburgerflex = document.createElement('div')
+  let array = ["40%","40%","10%"]
+  root.children[0].children[0].children[2].appendChild(hamburgerflex);
+  root.children[0].children[0].children[2].children[i].style.width=array[i];
+  root.children[0].children[0].children[2].children[i].style.border="1px solid black";
+}
+//* 햄버거 메뉴 3줄
+root.children[0].children[0].children[2].children[1].style.display="flex";
+root.children[0].children[0].children[2].children[1].style.flexDirection="column";
+root.children[0].children[0].children[2].children[1].style.justifyContent="space-evenly";
+
+
+for(let i=0;i<3;i++){
+  let hamburger = document.createElement('div')
+  root.children[0].children[0].children[2].children[1].appendChild(hamburger);
+  root.children[0].children[0].children[2].children[1].children[i].style.width="100%";
+  root.children[0].children[0].children[2].children[1].children[i].style.height="10%";
+  root.children[0].children[0].children[2].children[1].children[i].style.backgroundColor="black";
+  root.children[0].children[0].children[2].children[1].children[i].style.border="1px solid black";
+
+
+}
+
+
+
 
 
 //*상단 list 컨테이너
