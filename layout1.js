@@ -75,15 +75,27 @@ root.children[0].children[2].style.transform="translate(-70%,0)";
 
 //*햄버거 클릭시, list 나오는 기능
 root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
-root.children[0].children[2].style.display=""
-root.children[0].children[0].style.opacity=0.1;
-root.children[0].children[1].style.opacity=0.1;
-
-
-
-
+  let count =0;
+  root.children[0].children[0].addEventListener('click',()=>{
+      
+      count ++;
+      if(count%2==1){
+     root.children[0].children[2].style.display=""
+     root.children[0].children[0].style.opacity=0.1;
+     root.children[0].children[1].style.opacity=0.1;
+       }
+       else{
+     root.children[0].children[2].style.display="none"
+     root.children[0].children[0].style.opacity=1;
+     root.children[0].children[1].style.opacity=1;
+       }
+       console.log(count)
+      }
+    )
   
-})
+    
+  }
+)
 
 
 
