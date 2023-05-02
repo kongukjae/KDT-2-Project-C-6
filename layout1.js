@@ -72,6 +72,7 @@ root.children[0].children[2].style.display="none"
 root.children[0].children[2].style.backgroundColor="red"
 root.children[0].children[2].style.transition="all ease 2s 0s";
 root.children[0].children[2].style.transform="translate(-70%,0)";
+a
 
 //*햄버거 클릭시, list 나오는 기능
 root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
