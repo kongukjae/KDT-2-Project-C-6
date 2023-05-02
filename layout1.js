@@ -22,7 +22,8 @@ for(let i=0;i<3;i++){
   root.children[0].children[0].children[i].style.flex='1';
   root.children[0].children[0].children[i].style.border='1px solid black';
 }
-root.children[0].children[0].children[3].style.border='1px solid black';
+let hamburger = document.createElement('span')
+root.children[0].children[0].children[2].append(hamburger);
 
 root.children[0].appendChild(topListDiv);
 root.children[0].children[1].style.width="100%";
