@@ -32,6 +32,7 @@ for(let i=0;i<3;i++){
   root.children[0].children[0].children[2].children[i].style.width=array[i];
   root.children[0].children[0].children[2].children[i].style.border="1px solid black";
 }
+
 //* 햄버거 메뉴 3줄
 root.children[0].children[0].children[2].children[1].style.display="flex";
 root.children[0].children[0].children[2].children[1].style.flexDirection="column";
@@ -45,10 +46,9 @@ for(let i=0;i<3;i++){
   root.children[0].children[0].children[2].children[1].children[i].style.height="10%";
   root.children[0].children[0].children[2].children[1].children[i].style.backgroundColor="black";
   root.children[0].children[0].children[2].children[1].children[i].style.border="1px solid black";
-
-
 }
-
+//*투명도
+root.children[0].style.opacity=0.1;
 
 
 
