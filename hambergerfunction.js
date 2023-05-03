@@ -63,8 +63,8 @@ root.children[0].children[1].style.top="10%"
 
 let hamburgerListDiv = document.createElement('div')
 root.children[0].appendChild(hamburgerListDiv);
-root.children[0].children[2].style.width="80%"
-root.children[0].children[2].style.height="100vh"
+root.children[0].children[2].style.width="0vw"
+root.children[0].children[2].style.height="100%"
 root.children[0].children[2].style.position="fixed"
 root.children[0].children[2].style.left="0px"
 root.children[0].children[2].style.top="0px"
@@ -72,8 +72,9 @@ root.children[0].children[2].style.display="flex"
 // root.children[0].children[2].style.display="none"
 
 root.children[0].children[2].style.backgroundColor="red"
-root.children[0].children[2].style.transition="all ease 1s 0s";
-root.children[0].children[2].style.transform="translate(70%,0)";
+root.children[0].children[2].style.transition="width 0.5s ease-out 0s";
+root.children[0].children[2].style.transform="translate(30%,0)";
+root.children[0].children[2].style.width="80vw"
 
 // //*햄버거 클릭시, list 나오는 기능
 // root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
