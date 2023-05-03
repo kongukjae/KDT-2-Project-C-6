@@ -63,25 +63,38 @@
 
   let hamburgerListDiv = document.createElement('div')
   root.children[0].appendChild(hamburgerListDiv);
-  root.children[0].children[2].style.width="0vw"
+  root.children[0].children[2].style.width="60%"
   root.children[0].children[2].style.height="100%"
   root.children[0].children[2].style.position="fixed"
-  root.children[0].children[2].style.left="0px"
-  root.children[0].children[2].style.top="0px"
+  root.children[0].children[2].style.left="40%"
+  root.children[0].children[2].style.top="10%"
   root.children[0].children[2].style.display="flex"
-  // root.children[0].children[2].style.display="none"
   root.children[0].children[2].style.backgroundColor="red"
-  root.children[0].children[2].style.transition="width 0.5s ease-out 1s";
-  root.children[0].children[2].style.transform="translate(20%,0)";
-  root.children[0].children[2].style.width="30vw"
+  root.children[0].children[2].style.display="none"
 
+  // root.children[0].children[2].style.transition="width 0.5s ease-out 1s";
+  // root.children[0].children[2].style.transform="translate(20%,0)";
+  // root.children[0].children[2].style.width="30vw"
+
+  let listOnOff = true;
 
 //*햄버거 클릭시, list 나오는 기능
-// root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
-// root.children[0].children[2].style.display="flex"
+root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
+  if(listOnOff==true){
+    listOnOff=false;
+   root.children[0].children[2].style.display=""
+    
+  }  
+  else{
+    listOnOff=true;
+   root.children[0].children[2].style.display="none"
+
+  }
+
+  // root.children[0].children[2].style.display="flex"
 // root.children[0].children[0].style.opacity=0.1;
 // root.children[0].children[1].style.opacity=0.1;
-// })
+})
 
 
 
