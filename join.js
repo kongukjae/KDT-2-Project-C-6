@@ -1,7 +1,8 @@
 
 let object = {
-  id:"강지민1",
-  password:"코드기어",
+  id:"wlals1234560",
+  password:"dD1354268!",
+  name:"강지민"
 }
 function join(object){
   let mysql = require('mysql2');
@@ -25,16 +26,24 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
     console.log("에러발생")
   }
   else{
-    console.log(results)
+    if(results.length>1){
+      console.log("아이디 중복 발생")
+      return false;
+    }
+    else{
+      connection.query(`insert into test.new_table(id_, password, name) values ('${object.id}', '${object.password}','${object.name}')`, function (error, results1, fields) {
+        if (error) {
+          console.log("error")
+        }
+        else{
+          console.log('회원가입 완료:', results1);
+        }
+      });      
+    }
   }
 })
   
-// connection.query(`insert into test.new_table(id_, password, name) values ('${object.id}', '${object.password}','${object.name}')`, function (error, results, fields) {
-//      if (error) {
-//        console.log("error")
-//      };
-//      console.log('The solution is: ', results);
-//    });
+
   
  connection.end();
 
