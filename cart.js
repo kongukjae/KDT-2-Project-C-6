@@ -99,7 +99,7 @@ root.children[0].children[0].children[2].children[1].addEventListener('click',()
 
 
 // console.dir(root)
-// //* 중간 화면 
+// //* 중간 화면 (cart)
 let middleDiv = document.createElement('div');
 root.children[0].appendChild(middleDiv)
 root.children[0].children[3].style.width="100%";
@@ -107,6 +107,20 @@ root.children[0].children[3].style.height="70%";
 root.children[0].children[3].style.overflowX="auto";
 root.children[0].children[3].style.overflowY="scroll";
 root.children[0].children[3].style.border="1px solid blue";
+root.children[0].children[3].style.display="flex";
+root.children[0].children[3].style.flexDirection="column";
+
+for(let i=0;i<5;i++){
+  let cartDiv = document.createElement('div');
+  root.children[0].children[3].appendChild(cartDiv);
+  root.children[0].children[3].children[i].style.width="100%";
+  root.children[0].children[3].children[i].style.height="20%";
+  root.children[0].children[3].children[i].style.border="1px solid black";
+
+
+}
+
+
 
 // //* 하단 화면 
 // let bottomDiv = document.createElement('div');
