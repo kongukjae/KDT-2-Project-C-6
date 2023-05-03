@@ -72,8 +72,8 @@
   // root.children[0].children[2].style.display="none"
   root.children[0].children[2].style.backgroundColor="red"
   root.children[0].children[2].style.transition="width 0.5s ease-out 1s";
-  root.children[0].children[2].style.transform="translate(70%,0)";
-  root.children[0].children[2].style.width="60vw"
+  root.children[0].children[2].style.transform="translate(20%,0)";
+  root.children[0].children[2].style.width="30vw"
 
 
 //*햄버거 클릭시, list 나오는 기능
