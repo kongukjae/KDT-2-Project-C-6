@@ -1,7 +1,7 @@
 
 let object = {
-  id:"wlals1234560",
-  password:"dD1354268!",
+  id:"wlals12345601",
+  password:"dD1354268",
   name:"강지민"
 }
 function join(object){
@@ -26,7 +26,7 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
     console.log("에러발생")
   }
   else{
-    if(results.length>1){
+    if(results.length>=1){
       console.log("아이디 중복 발생")
       return false;
     }
@@ -34,18 +34,22 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
       connection.query(`insert into test.new_table(id_, password, name) values ('${object.id}', '${object.password}','${object.name}')`, function (error, results1, fields) {
         if (error) {
           console.log("error")
+          return false;
         }
         else{
           console.log('회원가입 완료:', results1);
+          connection.end();
+          return true;
+          
         }
       });      
     }
   }
 })
+connection.end();
+  
   
 
-  
- connection.end();
 
 
  }
