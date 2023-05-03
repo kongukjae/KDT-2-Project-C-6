@@ -2,8 +2,8 @@ let root = document.getElementById('root');
 
 let mainDiv = document.createElement('div')
 root.appendChild(mainDiv)
-root.children[0].style.width='390px';
-root.children[0].style.height='844px';
+root.children[0].style.width='100vw';
+root.children[0].style.height='100vh';
 root.children[0].style.border='1px solid black';
 
  //* 상단 컨테이너
@@ -55,25 +55,25 @@ root.children[0].children[1].style.height="5%";
 root.children[0].children[1].style.border="1px solid black";
 
 // //*상단 컨테이너와 상단 category 컨테이너 fixed
-// root.children[0].children[0].style.position="fixed"
-// root.children[0].children[1].style.position="fixed"
-// root.children[0].children[1].style.top="10%"
+root.children[0].children[0].style.position="fixed"
+root.children[0].children[1].style.position="fixed"
+root.children[0].children[1].style.top="10%"
 
 // //*list 메뉴
 
 let hamburgerListDiv = document.createElement('div')
 root.children[0].appendChild(hamburgerListDiv);
-root.children[0].children[2].style.width="350px"
-root.children[0].children[2].style.height="844px"
+root.children[0].children[2].style.width="80%"
+root.children[0].children[2].style.height="100vh"
 root.children[0].children[2].style.position="fixed"
-root.children[0].children[2].style.left="390px"
+root.children[0].children[2].style.left="0px"
 root.children[0].children[2].style.top="0px"
 root.children[0].children[2].style.display="flex"
-//root.children[0].children[2].style.display="none"
+// root.children[0].children[2].style.display="none"
 
 root.children[0].children[2].style.backgroundColor="red"
-root.children[0].children[2].style.transition="all ease 2s 0s";
-root.children[0].children[2].style.transform="translate(-70%,0)";
+root.children[0].children[2].style.transition="all ease 1s 0s";
+root.children[0].children[2].style.transform="translate(70%,0)";
 
 // //*햄버거 클릭시, list 나오는 기능
 // root.children[0].children[0].children[2].children[1].addEventListener('click',()=>{
