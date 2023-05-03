@@ -20,7 +20,7 @@ function join(object){
     console.log("DB와 연결 완료");
   });
 
-connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error,results)=>{
+connection.query(`SELECT * FROM test.new_table WHERE id_ =${object.id}`,(error,results)=>{
   if(error){
     console.log("에러발생")
   }
