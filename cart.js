@@ -129,6 +129,7 @@ for(let i=0;i<5;i++){
   root.children[0].children[3].children[i].style.boxSizing="border-box";
   root.children[0].children[3].children[i].style.display="flex";
   root.children[0].children[3].children[i].style.flexDirection="column";
+
   //*cart div안 layout1 작업들
   for(let a=0;a<3;a++){
     let height=["15%","70%","15%"]
@@ -138,7 +139,7 @@ for(let i=0;i<5;i++){
   }
   //*cart div안 layout2 작업들(아이템 이미지, 항목들 칸 나누기)
   for(let q=0;q<4;q++){
-    let widthArray=["5%","20%","5%","70%"];
+    let widthArray=["5%","20%","5%","67%","3%"];
     let cartDivInnerSecond = document.createElement('div');
     root.children[0].children[3].children[i].children[1].appendChild(cartDivInnerSecond);
     root.children[0].children[3].children[i].children[1].style.display="flex";
@@ -147,23 +148,23 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[q].style.height="100%";
   }
   //*cart div안 layout3 작업들(아이템 정보들 항목)
-//   for(let k =0;k<3;k++){
-//     let cartDivInnerThird = document.createElement('div');
-//     root.children[0].children[3].children[i].children[1].children[2].appendChild(cartDivInnerThird);
-//     root.children[0].children[3].children[i].children[1].children[2].style.display="flex";
-//     root.children[0].children[3].children[i].children[1].children[2].style.flexDirection="column";
-//     root.children[0].children[3].children[i].children[1].children[2].style.boxSizing="border-box"
-//     root.children[0].children[3].children[i].children[1].children[2].children[k].style.width="100%";
-//     root.children[0].children[3].children[i].children[1].children[2].children[k].style.height="33%";
-//   }
+  for(let k =0;k<3;k++){
+    let cartDivInnerThird = document.createElement('div');
+    root.children[0].children[3].children[i].children[1].children[3].appendChild(cartDivInnerThird);
+    root.children[0].children[3].children[i].children[1].children[3].style.display="flex";
+    root.children[0].children[3].children[i].children[1].children[3].style.flexDirection="column";
+    root.children[0].children[3].children[i].children[1].children[3].style.boxSizing="border-box"
+    root.children[0].children[3].children[i].children[1].children[3].children[k].style.width="100%";
+    root.children[0].children[3].children[i].children[1].children[3].children[k].style.height="33%";
+  }
 //   //*cart div안 layout4 작업들(아이템 제목과 x 버튼)
-//   for(let w=0;w<2;w++){
-//     let widthArray=["40%","10%"];
-//     let cartDivInnerfourth = document.createElement('div');
-//     root.children[0].children[3].children[i].children[1].children[2].children[0].appendChild(cartDivInnerfourth)
-//     root.children[0].children[3].children[i].children[1].children[2].children[0].style.display="flex"
-//     root.children[0].children[3].children[i].children[1].children[2].children[0].style.justifyContent="space-between"
-//     root.children[0].children[3].children[i].children[1].children[2].children[0].children[w].style.width=widthArray[w]
+  for(let w=0;w<2;w++){
+    let widthArray=["40%","10%"];
+    let cartDivInnerfourth = document.createElement('div');
+    root.children[0].children[3].children[i].children[1].children[3].children[0].appendChild(cartDivInnerfourth)
+    root.children[0].children[3].children[i].children[1].children[3].children[0].style.display="flex"
+    root.children[0].children[3].children[i].children[1].children[3].children[0].style.justifyContent="space-between"
+    root.children[0].children[3].children[i].children[1].children[3].children[0].children[w].style.width=widthArray[w]
   }
 //   for(let e=0;)
 
@@ -171,7 +172,7 @@ for(let i=0;i<5;i++){
 
 
 // }
-
+}
 
  //* 하단 화면 
 let bottomDiv = document.createElement('div');
