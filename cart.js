@@ -137,8 +137,8 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[a].style.height=height[a]  
   }
   //*cart div안 layout2 작업들(아이템 이미지, 항목들 칸 나누기)
-  for(let q=0;q<3;q++){
-    let widthArray=["10%","20%","70%"];
+  for(let q=0;q<4;q++){
+    let widthArray=["5%","20%","5%","70%"];
     let cartDivInnerSecond = document.createElement('div');
     root.children[0].children[3].children[i].children[1].appendChild(cartDivInnerSecond);
     root.children[0].children[3].children[i].children[1].style.display="flex";
@@ -147,32 +147,30 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[q].style.height="100%";
   }
   //*cart div안 layout3 작업들(아이템 정보들 항목)
-  for(let k =0;k<3;k++){
-    let cartDivInnerThird = document.createElement('div');
-    root.children[0].children[3].children[i].children[1].children[2].appendChild(cartDivInnerThird);
-    root.children[0].children[3].children[i].children[1].children[2].style.display="flex";
-    root.children[0].children[3].children[i].children[1].children[2].style.flexDirection="column";
-    root.children[0].children[3].children[i].children[1].children[2].style.boxSizing="border-box"
-    root.children[0].children[3].children[i].children[1].children[2].children[k].style.width="100%";
-    root.children[0].children[3].children[i].children[1].children[2].children[k].style.height="33%";
+//   for(let k =0;k<3;k++){
+//     let cartDivInnerThird = document.createElement('div');
+//     root.children[0].children[3].children[i].children[1].children[2].appendChild(cartDivInnerThird);
+//     root.children[0].children[3].children[i].children[1].children[2].style.display="flex";
+//     root.children[0].children[3].children[i].children[1].children[2].style.flexDirection="column";
+//     root.children[0].children[3].children[i].children[1].children[2].style.boxSizing="border-box"
+//     root.children[0].children[3].children[i].children[1].children[2].children[k].style.width="100%";
+//     root.children[0].children[3].children[i].children[1].children[2].children[k].style.height="33%";
+//   }
+//   //*cart div안 layout4 작업들(아이템 제목과 x 버튼)
+//   for(let w=0;w<2;w++){
+//     let widthArray=["40%","10%"];
+//     let cartDivInnerfourth = document.createElement('div');
+//     root.children[0].children[3].children[i].children[1].children[2].children[0].appendChild(cartDivInnerfourth)
+//     root.children[0].children[3].children[i].children[1].children[2].children[0].style.display="flex"
+//     root.children[0].children[3].children[i].children[1].children[2].children[0].style.justifyContent="space-between"
+//     root.children[0].children[3].children[i].children[1].children[2].children[0].children[w].style.width=widthArray[w]
   }
-  //*cart div안 layout4 작업들(아이템 제목과 x 버튼)
-  for(let w=0;w<2;w++){
-    let widthArray=["40%","10%"];
-    let cartDivInnerfourth = document.createElement('div');
-    root.children[0].children[3].children[i].children[1].children[2].children[0].appendChild(cartDivInnerfourth)
-    root.children[0].children[3].children[i].children[1].children[2].children[0].style.display="flex"
-    root.children[0].children[3].children[i].children[1].children[2].children[0].style.justifyContent="space-between"
-    root.children[0].children[3].children[i].children[1].children[2].children[0].children[w].style.width=widthArray[w]
-
-
-
-  }
+//   for(let e=0;)
 
   
 
 
-}
+// }
 
 
  //* 하단 화면 
