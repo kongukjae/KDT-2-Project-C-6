@@ -129,15 +129,15 @@ for(let i=0;i<5;i++){
   root.children[0].children[3].children[i].style.boxSizing="border-box";
   root.children[0].children[3].children[i].style.display="flex";
   root.children[0].children[3].children[i].style.flexDirection="column";
-  //*cart div안 layout 작업들
+  //*cart div안 layout1 작업들
   for(let a=0;a<3;a++){
+    let height=["15%","70%","15%"]
     let cartDivInnerFirst = document.createElement('div');
     root.children[0].children[3].children[i].appendChild(cartDivInnerFirst);
+    root.children[0].children[3].children[i].children[a].style.height=height[a]  
   }
-  root.children[0].children[3].children[i].children[0].style.height="15%"  
-  root.children[0].children[3].children[i].children[1].style.height="70%"
+  //*cart div안 layout2 작업들
   for(let q=0;q<3;q++){
-
     let widthArray=["10%","20%","70%"];
     let cartDivInnerSecond = document.createElement('div');
     root.children[0].children[3].children[i].children[1].appendChild(cartDivInnerSecond);
@@ -146,17 +146,26 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[q].style.width=widthArray[q];
     root.children[0].children[3].children[i].children[1].children[q].style.height="100%";
   }
+  //*cart div안 layout3 작업들
+  for(let k =0;k<3;k++){
+    let cartDivInnerThird = document.createElement('div');
+    root.children[0].children[3].children[i].children[1].children[2].appendChild(cartDivInnerThird);
+    root.children[0].children[3].children[i].children[1].children[2].style.display="flex";
+    root.children[0].children[3].children[i].children[1].children[2].style.flexDirection="column";
+    root.children[0].children[3].children[i].children[1].children[2].style.boxSizing="border-box"
+    root.children[0].children[3].children[i].children[1].children[2].children[k].style.width="100%";
+    root.children[0].children[3].children[i].children[1].children[2].children[k].style.height="33%";
+  }
+  //*cart 
+  for(let w=0;w<2;w++){
+    let cartDivInnerfourth = document.createElement('div');
+
+  }
+
+  
 
 
-  root.children[0].children[3].children[i].children[2].style.height="15%"
 }
-
-
-
-
-
-
-
 
 
  //* 하단 화면 
