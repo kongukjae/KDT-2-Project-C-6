@@ -5,6 +5,8 @@ let root = document.getElementById('root');
   root.children[0].style.width='100vw';
   root.children[0].style.height='100vh';
   root.children[0].style.border='1px solid black';
+  root.children[0].style.boxSizing='border-box';
+
 
   //* 상단 컨테이너
   let topDiv = document.createElement('div');
@@ -15,6 +17,7 @@ let root = document.getElementById('root');
   root.children[0].children[0].style.width="100%";
   root.children[0].children[0].style.height="10%";
   root.children[0].children[0].style.border='1px solid black';
+  root.children[0].children[0].style.boxSizing='border-box';
 
   //*상단 컨테이너 3개 div
   for(let i=0;i<3;i++){
@@ -22,6 +25,8 @@ let root = document.getElementById('root');
     root.children[0].children[0].appendChild(div)
     root.children[0].children[0].children[i].style.flex='1';
     root.children[0].children[0].children[i].style.border='1px solid black'; 
+    root.children[0].children[0].children[i].style.boxSizing='border-box'; 
+
   }
   //* 햄버거 메뉴 만드는 flex  
   root.children[0].children[0].children[2].style.display='flex'; 
@@ -53,6 +58,8 @@ let root = document.getElementById('root');
   root.children[0].children[1].style.width="100%";
   root.children[0].children[1].style.height="5%";
   root.children[0].children[1].style.border="1px solid red";
+  root.children[0].children[1].style.boxSizing="border-box";
+
 
   // //*상단 컨테이너와 상단 category 컨테이너 fixed
   // root.children[0].children[0].style.position="fixed"
@@ -98,8 +105,8 @@ root.children[0].children[0].children[2].children[1].addEventListener('click',()
 
 
 
-// console.dir(root)
-// //* 중간 화면 (cart)
+console.dir(root)
+ //* 중간 화면 (cart container)
 let middleDiv = document.createElement('div');
 root.children[0].appendChild(middleDiv)
 root.children[0].children[3].style.width="100%";
@@ -109,22 +116,41 @@ root.children[0].children[3].style.overflowY="scroll";
 root.children[0].children[3].style.border="1px solid blue";
 root.children[0].children[3].style.display="flex";
 root.children[0].children[3].style.flexDirection="column";
+root.children[0].children[3].style.boxSizing="border-box";
 
+
+//* cart div들
 for(let i=0;i<5;i++){
   let cartDiv = document.createElement('div');
   root.children[0].children[3].appendChild(cartDiv);
   root.children[0].children[3].children[i].style.width="100%";
   root.children[0].children[3].children[i].style.height="20%";
   root.children[0].children[3].children[i].style.border="1px solid black";
-
-
+  root.children[0].children[3].children[i].style.boxSizing="border-box";
+  root.children[0].children[3].children[i].style.display="flex";
+  root.children[0].children[3].children[i].style.flexDirection="column";
+  //*cart div안 layout 작업들
+  for(let a=0;a<3;a++){
+    let cartDivInnerFirst = document.createElement('div');
+    root.children[0].children[3].children[i].appendChild(cartDivInnerFirst);
+  }
+  root.children[0].children[3].children[i].children[0].style.height="15%"  
+  root.children[0].children[3].children[i].children[1].style.height="70%"
+  root.children[0].children[3].children[i].children[2].style.height="15%"
 }
 
 
 
-// //* 하단 화면 
-// let bottomDiv = document.createElement('div');
-// root.children[0].appendChild(bottomDiv)
-// root.children[0].children[2].style.width="100%";
-// root.children[0].children[2].style.height="15%";
-// root.children[0].children[2].style.border="1px solid black";
+
+
+
+
+
+
+ //* 하단 화면 
+let bottomDiv = document.createElement('div');
+root.children[0].appendChild(bottomDiv)
+root.children[0].children[4].style.width="100%";
+root.children[0].children[4].style.height="15%";
+root.children[0].children[4].style.border="1px solid pink";
+root.children[0].children[4].style.boxSizing="border-box";
