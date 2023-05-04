@@ -136,6 +136,18 @@ for(let i=0;i<5;i++){
   }
   root.children[0].children[3].children[i].children[0].style.height="15%"  
   root.children[0].children[3].children[i].children[1].style.height="70%"
+  for(let q=0;q<3;q++){
+
+    let widthArray=["10%","20%","70%"];
+    let cartDivInnerSecond = document.createElement('div');
+    root.children[0].children[3].children[i].children[1].appendChild(cartDivInnerSecond);
+    root.children[0].children[3].children[i].children[1].style.display="flex";
+    root.children[0].children[3].children[i].children[1].style.boxSizing="border-box";
+    root.children[0].children[3].children[i].children[1].children[q].style.width=widthArray[q];
+    root.children[0].children[3].children[i].children[1].children[q].style.height="100%";
+  }
+
+
   root.children[0].children[3].children[i].children[2].style.height="15%"
 }
 
