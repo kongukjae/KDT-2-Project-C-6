@@ -95,7 +95,7 @@
 
   }
 
-
+//
   //*list 메뉴
   let hamburgerListDiv = document.createElement('div')
   root.children[0].appendChild(hamburgerListDiv);
