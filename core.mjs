@@ -13,6 +13,7 @@ function makeItems(target,brandName,content,price) {
   let liTag = document.createElement('li')
   liTag.style.width="100%"
   liTag.style.height="100%"
+  // liTag.style.listStyle="none"
   let imgTag = document.createElement('img')
   
   for(let i =0;i<2;i++){
