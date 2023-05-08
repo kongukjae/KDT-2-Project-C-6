@@ -173,7 +173,12 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[3].children[2].appendChild(cartDivInnerfifth)
     root.children[0].children[3].children[i].children[1].children[3].children[2].style.display="flex";
     root.children[0].children[3].children[i].children[1].children[3].children[2].children[b].style.width=widthArray[b];
-
+  }
+  for(let c=0;c<3;c++){
+    let cartDivInnersixth = document.createElement('div');
+    root.children[0].children[3].children[i].children[1].children[3].children[2].children[0].appendChild(cartDivInnersixth)
+    root.children[0].children[3].children[i].children[1].children[3].children[2].children[0].style.display="flex";
+    root.children[0].children[3].children[i].children[1].children[3].children[2].children[0].children[c].style.flex=1
   }
 
 }
@@ -185,3 +190,5 @@ root.children[0].children[4].style.width="100%";
 root.children[0].children[4].style.height="15%";
 root.children[0].children[4].style.border="1px solid pink";
 root.children[0].children[4].style.boxSizing="border-box";
+
+console.dir(root)
