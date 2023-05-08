@@ -1,12 +1,15 @@
+import makeTag from './core.js'
 let root = document.getElementById('root');
 let listOnOff = true;
 
-  let mainDiv = document.createElement('div')
-  root.appendChild(mainDiv)
-  root.children[0].style.width='100vw';
-  root.children[0].style.height='100vh';
+  makeTag(root,"div","100vw","100vh")
   root.children[0].style.border='1px solid black';
-  root.children[0].style.boxSizing='border-box';
+
+  // let mainDiv = document.createElement('div')
+  // root.appendChild(mainDiv)
+  // root.children[0].style.width='100vw';
+  // root.children[0].style.height='100vh';
+  // root.children[0].style.boxSizing='border-box';
 
 
 

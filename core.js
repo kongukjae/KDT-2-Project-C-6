@@ -1,4 +1,3 @@
-let root = document.getElementById('root')
 
 function makeTag(target,tagName,width,height,display){
   let tag = document.createElement(`${tagName}`);
@@ -10,3 +9,4 @@ function makeTag(target,tagName,width,height,display){
 }
 
 
+export default makeTag
