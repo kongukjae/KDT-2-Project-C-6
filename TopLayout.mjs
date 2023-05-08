@@ -44,7 +44,7 @@ let listOnOff = true;
   makeTag(root.children[0],"div","100%","5%","flex")
   root.children[0].children[1].style.justifyContent="center";
   root.children[0].children[1].style.alignItems="center";
-  root.children[0].children[1].innerText="공통";
+  root.children[0].children[1].innerText="Top";
  
 
   //*list 메뉴
@@ -82,8 +82,7 @@ root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
 root.children[0].children[3].style.gridTemplateRows="40%";
 
 
-makeItems(root.children[0].children[3],"a","B","c")
-makeItems(root.children[0].children[3],"a","B","c")
+
 makeItems(root.children[0].children[3],"a","B","c")
 makeItems(root.children[0].children[3],"a","B","c")
 
