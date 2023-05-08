@@ -166,12 +166,7 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[3].children[0].style.justifyContent="space-between"
     root.children[0].children[3].children[i].children[1].children[3].children[0].children[w].style.width=widthArray[w]
   }
-//   for(let e=0;)
 
-  
-
-
-// }
 }
 
  //* 하단 화면 
