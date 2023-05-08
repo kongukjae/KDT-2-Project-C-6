@@ -5,6 +5,7 @@ function makeTag(target,tagName,width,height,display){
   tag.style.width=width
   tag.style.height=height
   tag.style.display=display
+  tag.style.border='1px solid black'
   tag.style.boxSizing='border-box'
 }
 
