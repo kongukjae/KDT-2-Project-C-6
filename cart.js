@@ -157,7 +157,7 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[3].children[k].style.width="100%";
     root.children[0].children[3].children[i].children[1].children[3].children[k].style.height="33%";
   }
-//   //*cart div안 layout4 작업들(아이템 제목과 x 버튼)
+ //*cart div안 layout4 작업들(아이템 제목과 x 버튼)
   for(let w=0;w<2;w++){
     let widthArray=["40%","10%"];
     let cartDivInnerfourth = document.createElement('div');
@@ -165,6 +165,15 @@ for(let i=0;i<5;i++){
     root.children[0].children[3].children[i].children[1].children[3].children[0].style.display="flex"
     root.children[0].children[3].children[i].children[1].children[3].children[0].style.justifyContent="space-between"
     root.children[0].children[3].children[i].children[1].children[3].children[0].children[w].style.width=widthArray[w]
+  }
+//*car div안 layout5 작업들(수량추가및삭제 와 가격정보 태그)
+  for(let b=0;b<2;b++){
+    let widthArray=["30%","30%"]
+    let cartDivInnerfifth = document.createElement('div');
+    root.children[0].children[3].children[i].children[1].children[3].children[2].appendChild(cartDivInnerfifth)
+    root.children[0].children[3].children[i].children[1].children[3].children[2].style.display="flex";
+    root.children[0].children[3].children[i].children[1].children[3].children[2].children[b].style.width=widthArray[b];
+
   }
 
 }
