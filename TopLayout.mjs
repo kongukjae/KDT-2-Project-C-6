@@ -86,9 +86,39 @@ let listOnOff = true;
   makeTag(root.children[0],"div","60%","100%","flex")
   root.children[0].children[2].style.position="fixed"
   root.children[0].children[2].style.left="40%"
-  root.children[0].children[2].style.top="10%"
+  root.children[0].children[2].style.top="0px"
   root.children[0].children[2].style.backgroundColor="red"
   root.children[0].children[2].style.display="none"
+  //* list 메뉴 -좌측 상단 x div
+  makeTag(root.children[0].children[2],"div","100%","5%","flex")
+  makeTag(root.children[0].children[2].children[0],"div","20%","100%","flex")
+  //* list 메뉴 -mypage, cart 버튼 태그 레이아웃
+  makeTag(root.children[0].children[2],"div","100%","5%","flex")
+  makeTag(root.children[0].children[2].children[1],"div","10%","100%","")
+  makeTag(root.children[0].children[2].children[1],"div","35%","100%","")
+  makeTag(root.children[0].children[2].children[1],"div","10%","100%","")
+  makeTag(root.children[0].children[2].children[1],"div","35%","100%","")
+  makeTag(root.children[0].children[2].children[1],"div","10%","100%","")
+
+  makeTag(root.children[0].children[2],"div","100%","5%","flex")
+  //* list 메뉴 - 카테고리div들
+  makeTag(root.children[0].children[2],"div","100%","65%","flex")
+  makeTag(root.children[0].children[2].children[3],"div","50%","100%","")
+
+  makeTag(root.children[0].children[2].children[3],"div","50%","100%","flex")
+  root.children[0].children[2].children[3].children[1].style.flexDirection="column"
+  for(let i=0;i<9;i++){
+  makeTag(root.children[0].children[2].children[3].children[1],"div","100%","10%","")
+  }
+  
+  
+  makeTag(root.children[0].children[2],"div","100%","20%","flex")
+
+
+
+
+
+
  
 
 //*햄버거 클릭시, list 나오는 기능
@@ -99,15 +129,18 @@ root.children[0].children[0].children[2].children[1].addEventListener('click',()
       root.children[0].children[0].style.opacity=0.1;
       root.children[0].children[1].style.opacity=0.1;
 
-  }  
-  else{
-    listOnOff=true;
-   root.children[0].children[2].style.display="none"
-   root.children[0].children[0].style.opacity=1;
-   root.children[0].children[1].style.opacity=1;
+    }  
+  })
+  root.children[0].children[2].children[0].children[0].addEventListener('click',()=>{
+    if(listOnOff==false){
+      listOnOff=true;
+      root.children[0].children[2].style.display="none"
+      root.children[0].children[0].style.opacity=1;
+      root.children[0].children[1].style.opacity=1;
 
-  }
-})
+    }
+  })
+ 
 
 //* 중간 화면 (cart container)
 makeTag(root.children[0],"div","100%","70%","grid")
