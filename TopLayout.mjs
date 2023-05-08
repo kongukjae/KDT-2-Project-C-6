@@ -114,12 +114,15 @@ makeTag(root.children[0],"div","100%","70%","grid")
 root.children[0].children[3].style.overflowX="auto";
 root.children[0].children[3].style.overflowY="scroll";
 root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
-root.children[0].children[3].style.gridTemplateRows="40%";
 
 
 
 makeItems(root.children[0].children[3],"a","B","c")
 makeItems(root.children[0].children[3],"a","B","c")
+makeItems(root.children[0].children[3],"a","B","c")
+makeItems(root.children[0].children[3],"a","B","c")
+makeItems(root.children[0].children[3],"a","B","c")
+
 
 
 

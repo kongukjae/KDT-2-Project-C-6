@@ -47,6 +47,8 @@ console.dir(imgTag)
   }
 
   target.appendChild(liTag);
+  target.style.gridTemplateRows="60px";
+
 }
 
 export {makeTag,makeItems} 
