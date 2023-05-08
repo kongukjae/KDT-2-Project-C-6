@@ -1,5 +1,5 @@
-let root = document.getElementById('root');
-let listOnOff = true;
+  let root = document.getElementById('root');
+  let listOnOff = true;
 
   let mainDiv = document.createElement('div')
   root.appendChild(mainDiv)
@@ -51,23 +51,52 @@ let listOnOff = true;
     root.children[0].children[0].children[2].children[1].children[i].style.height="10%";
     root.children[0].children[0].children[2].children[1].children[i].style.backgroundColor="black";
     root.children[0].children[0].children[2].children[1].children[i].style.borderRadius="30px";
-    root.children[0].children[0].children[2].children[1].children[i].style.border="1px solid black";
   }
+  console.dir(root)
   
   //*상단 category 컨테이너 (fixed처리 해야함)
   let topCategoryDiv= document.createElement('div');
   root.children[0].appendChild(topCategoryDiv);
   root.children[0].children[1].style.width="100%";
-  root.children[0].children[1].style.height="5%";
+  root.children[0].children[1].style.height="10%";
   root.children[0].children[1].style.border="1px solid red";
   root.children[0].children[1].style.boxSizing="border-box";
   root.children[0].children[1].style.display="flex";
-  root.children[0].children[1].style.justifyContent="center";
-  root.children[0].children[1].style.alignItems="center";
-  root.children[0].children[1].innerText="공통";
+  root.children[0].children[1].style.flexDirection="column";
+
+
+  for(let w=0;w<2;w++){
+    let topCategoryDiv1= document.createElement('div');
+    root.children[0].children[1].appendChild(topCategoryDiv1);
+  }
+  root.children[0].children[1].children[0].style.width="100%";
+  root.children[0].children[1].children[0].style.height="50%";
+  root.children[0].children[1].children[0].style.display="flex";
+  root.children[0].children[1].children[0].style.justifyContent="center";
+  root.children[0].children[1].children[0].style.alignItems="center";
+  root.children[0].children[1].children[0].innerText="TOP";  
+  
+  //*상단 category중 중분류 태그 
+  root.children[0].children[1].children[1].style.width="100%";
+  root.children[0].children[1].children[1].style.height="50%";
+  root.children[0].children[1].children[1].style.display="flex";
+
+  for(let i=0;i<4;i++){
+    middleCategoryTextArray=["outer","longsleeve","T-shirt","tank"]
+    let middleCategoryDiv = document.createElement('div');
+    root.children[0].children[1].children[1].appendChild(middleCategoryDiv);
+    root.children[0].children[1].children[1].children[i].style.width="25%"
+    root.children[0].children[1].children[1].children[i].innerText=middleCategoryTextArray[i]
+    root.children[0].children[1].children[1].children[i].style.display="flex"
+    root.children[0].children[1].children[1].children[i].style.justifyContent="center"
+    root.children[0].children[1].children[1].children[i].style.alignItems="center"
+    root.children[0].children[1].children[1].children[i].style.alignItems="center"
+    root.children[0].children[1].children[1].children[i].style.opacity="0.3"
+
+  }
+
 
   //*list 메뉴
-
   let hamburgerListDiv = document.createElement('div')
   root.children[0].appendChild(hamburgerListDiv);
   root.children[0].children[2].style.width="60%"
