@@ -3,7 +3,7 @@ import url from 'url'
 import fs from 'fs'
 
 const server = http.createServer((req,res)=>{
-  
+  const
   
   res.statusCode=200;
   res.setHeader('Content-Type','text/html');
