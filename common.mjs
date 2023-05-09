@@ -95,6 +95,7 @@ root.children[0].children[0].children[2].children[1].addEventListener('click',()
   if(listOnOff==true){
        listOnOff=false;
       root.children[0].children[2].style.display=""
+
       root.children[0].children[0].style.opacity=0.1;
       root.children[0].children[1].style.opacity=0.1;
 
