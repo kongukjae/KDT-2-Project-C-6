@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 let object = {
   id:"wlals12345601",
   password:"dD1354268",
