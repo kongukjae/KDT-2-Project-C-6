@@ -18,8 +18,8 @@
   "homepage": "https://github.com/kongukjae/KDT-2-Project-C-6#readme",
   "dependencies": {
     "mysql": "^2.18.1",
-    "mysql2": "^3.2.4"
+    "mysql2": "^3.2.4",
+    "url": "^0.11.0"
   },
   "type": "module"
-
 }

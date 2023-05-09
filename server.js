@@ -1,9 +1,17 @@
 import http from 'http'
+import url from 'url'
+import fs from 'fs'
 
 const server = http.createServer((req,res)=>{
+  
+  
   res.statusCode=200;
-  res.setHeader('Content-Type','text/plain');
-  res.end('Hello world');
+  res.setHeader('Content-Type','text/html');
+  if(req.url=="/main"){
+    res.write("zz")
+    console.log(req)
+  }
+  res.end()
 });
 
 server.listen(3000,()=>{
