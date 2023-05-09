@@ -161,14 +161,67 @@ root.children[0].children[3].style.overflowY="scroll";
 root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
 root.children[0].children[3].style.flexDirection="column";
 
-
+//*로그인 페이지 레이아웃 
 makeTag(root.children[0].children[3],"div","100%","5%")
-makeTag(root.children[0].children[3],"div","100%","35%")
+makeTag(root.children[0].children[3],"form","100%","35%","flex")
+//*로그인 아이디 비밀번호 태그
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","80%","100%","flex")
+root.children[0].children[3].children[1].children[2].style.flexDirection="column"
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+root.children[0].children[3].children[1].children[1].style.backgroundColor="gray"
+root.children[0].children[3].children[1].children[3].style.backgroundColor="gray"
+
+
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"input","100%","20%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"input","100%","20%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","20%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+
+root.children[0].children[3].children[1].children[2].children[0].style.backgroundColor="gray"
+root.children[0].children[3].children[1].children[2].children[2].style.backgroundColor="gray"
+root.children[0].children[3].children[1].children[2].children[4].style.backgroundColor="gray"
+root.children[0].children[3].children[1].children[2].children[6].style.backgroundColor="gray"
+
+
 makeTag(root.children[0].children[3],"div","100%","2%")
-makeTag(root.children[0].children[3],"div","100%","15%")
+//*로그인 버튼
+makeTag(root.children[0].children[3],"div","100%","15%","flex")
+makeTag(root.children[0].children[3].children[3],"button","15%","100%")
+makeTag(root.children[0].children[3].children[3],"div","70%","100%")
+root.children[0].children[3].children[3].children[1].style.backgroundColor="gray"
+root.children[0].children[3].children[3].children[1].innerText="로그인"
+root.children[0].children[3].children[3].children[1].style.textAlign="center"
+
+
+makeTag(root.children[0].children[3].children[3],"div","15%","100%")
+
+
+
 makeTag(root.children[0].children[3],"div","100%","2%")
-makeTag(root.children[0].children[3],"div","100%","10%")
+//*아이디 비밀번호 회원가입 버튼
+makeTag(root.children[0].children[3],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[5],"div","5%","100%")
+makeTag(root.children[0].children[3].children[5],"div","30%","100%")
+root.children[0].children[3].children[5].children[1].innerText="아이디 찾기"
+root.children[0].children[3].children[5].children[1].style.textAlign="center"
+makeTag(root.children[0].children[3].children[5],"div","30%","100%")
+root.children[0].children[3].children[5].children[2].innerText="비밀번호 찾기"
+root.children[0].children[3].children[5].children[2].style.textAlign="center"
+makeTag(root.children[0].children[3].children[5],"div","30%","100%")
+root.children[0].children[3].children[5].children[3].innerText="회원가입"
+root.children[0].children[3].children[5].children[3].style.textAlign="center"
+
+makeTag(root.children[0].children[3].children[5],"div","5%","100%")
+
+
 makeTag(root.children[0].children[3],"div","100%","2%")
+//*네이버 카카오 로그인 버튼
 makeTag(root.children[0].children[3],"div","100%","10%")
 makeTag(root.children[0].children[3],"div","100%","50%")
 
