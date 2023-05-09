@@ -2,14 +2,20 @@
   "name": "kdt-2-project-c-6",
   "version": "1.0.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "description": "",
   "main": "join.js",
 =======
   "description": "짐웨어프로젝트",
   "main": "index.js",
 >>>>>>> TopLayout
+=======
+  "description": "",
+  "main": "animationtest.js",
+>>>>>>> main
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -30,4 +36,7 @@
 =======
   "type": "module"
 }
+<<<<<<< HEAD
 >>>>>>> TopLayout
+=======
+>>>>>>> main

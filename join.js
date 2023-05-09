@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 let object = {
   id:"wlals12345601",
   password:"dD1354268",
@@ -47,6 +50,7 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
   }
 })
 connection.end();
+<<<<<<< HEAD
   
   
 
@@ -55,3 +59,6 @@ connection.end();
  }
 
 join(object)
+=======
+}
+>>>>>>> main

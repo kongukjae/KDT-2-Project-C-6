@@ -47,7 +47,7 @@ console.dir(imgTag)
   }
 
   target.appendChild(liTag);
-  target.style.gridTemplateRows="60px";
+  target.style.gridTemplateRows="50%";
 
 }
 
