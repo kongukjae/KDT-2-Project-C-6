@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); //es6에서는 __dirname 지원 X
 
 const server = http.createServer((req,res)=>{
+  if(req.url=="/" && req.method=="GET"){
   const filePath = path.join(__dirname,'/layout1.html');
   fs.readFile(filePath,'utf-8',(err,data)=>{
     if(err){
@@ -16,16 +17,16 @@ const server = http.createServer((req,res)=>{
       res.end('err')
     }
     else{
+
       res.statusCode=200;
       res.setHeader('Content-Type','text/javascript');
       res.end(data)
     }
   })  
   
-  // if(req.url=="/main"){
+}
   //   res.write("zz")
   //   console.log(req)
-  // }
   // res.end()
 });
 
