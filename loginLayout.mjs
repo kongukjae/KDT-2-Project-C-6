@@ -213,7 +213,7 @@ root.children[0].children[3].children[5].children[1].style.textAlign="center"
 makeTag(root.children[0].children[3].children[5],"div","30%","100%")
 root.children[0].children[3].children[5].children[2].innerText="비밀번호 찾기"
 root.children[0].children[3].children[5].children[2].style.textAlign="center"
-makeTag(root.children[0].children[3].children[5],"div","30%","100%")
+makeTag(root.children[0].children[3].children[5],"div","30%","100%"5
 root.children[0].children[3].children[5].children[3].innerText="회원가입"
 root.children[0].children[3].children[5].children[3].style.textAlign="center"
 

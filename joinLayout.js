@@ -162,11 +162,44 @@ root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
 root.children[0].children[3].style.flexDirection="column";
 
 makeTag(root.children[0].children[3],"div","100%","5%")
-//* 회원가입 정보 입력 컨테이너
-makeTag(root.children[0].children[3],"div","100%","65%")
+//* 회원가입 정보 입력 큰 컨테이너
+makeTag(root.children[0].children[3],"div","100%","65%","flex")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","80%","100%","flex")
+root.children[0].children[3].children[1].children[2].style.flexDirection="column"
+//* 회원가입 정보 입력 시작 컨테이너---------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+
+
+
+
+
+
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3],"div","100%","10%")
 //*회원가입 버튼 컨테이너
-makeTag(root.children[0].children[3],"div","100%","20%")
+makeTag(root.children[0].children[3],"div","100%","20%","flex")
+makeTag(root.children[0].children[3].children[3],"div","20%","100%")
+makeTag(root.children[0].children[3].children[3],"div","60%","100%")
+root.children[0].children[3].children[3].children[1].innerText="회원가입"
+root.children[0].children[3].children[3].children[1].style.textAlign="center"
+
+makeTag(root.children[0].children[3].children[3],"div","20%","100%")
+
+
 makeTag(root.children[0].children[3],"div","100%","10%")
 
 
