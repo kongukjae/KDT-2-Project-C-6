@@ -1,11 +1,18 @@
 {
   "name": "kdt-2-project-c-6",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
   "main": "animationtest.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+=======
+  "description": "짐웨어프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> main
   },
   "repository": {
     "type": "git",
@@ -18,4 +25,8 @@
   },
   "homepage": "https://github.com/kongukjae/KDT-2-Project-C-6#readme",
   "type": "module"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
