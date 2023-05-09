@@ -6,20 +6,29 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); //es6에서는 __dirname 지원 X
+const filePath = path.join(__dirname,'/layout1.html');
 
 const server = http.createServer((req,res)=>{
-  if(req.url=="/a" && req.method=="GET"){
-  const filePath = path.join(__dirname,'/layout1.html');
-  fs.readFile(filePath,'utf-8',(err,data)=>{
-    if(err){
-      console.log(err);
-      res.statusCode=500;
-      res.end('err')
+  if(req.method=="GET"){
+    fs.readFile('./layout1.html','utf-8',(err,data)=>{
+      if(err){
+        console.log(err);
+        res.statusCode=500;
+        res.end('err')
+      }
+      else{
+        res.statusCode=200;
+        res.setHeader('Content-Type','text/javascript');
+        console.log(req.url)
+        res.end(data)
     }
-    else{
-      res.statusCode=200;
-      res.setHeader('Content-Type','text/javascript');
-      res.end(data)
+    if(req.url=="/favicon.ico"){
+      fs.readFile('./core.mjs','utf-8',(err,data)=>{
+        console.log(data)
+      })
+      fs.readFile('./TopLayout.mjs','utf-8',(err,data)=>{
+        console.log(data)
+      })
     }
   })  
   
