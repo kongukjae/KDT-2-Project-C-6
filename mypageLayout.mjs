@@ -59,7 +59,7 @@ let listOnOff = true;
   // root.children[0].children[1].children[0].style.display="flex";
   root.children[0].children[1].children[0].style.justifyContent="center";
   root.children[0].children[1].children[0].style.alignItems="center";
-  root.children[0].children[1].children[0].innerText="JOIN US";  
+  root.children[0].children[1].children[0].innerText="MY PAGE";  
   
   //*상단 category중 중분류 태그 
   // makeTag(root.children[0].children[1],"div","100%","50%","flex")
@@ -160,6 +160,81 @@ root.children[0].children[3].style.overflowX="auto";
 root.children[0].children[3].style.overflowY="scroll";
 root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
 root.children[0].children[3].style.flexDirection="column";
+
+makeTag(root.children[0].children[3],"div","100%","5%")
+//*마이페이지 큰 컨테이너----------------------------------------------------------
+makeTag(root.children[0].children[3],"div","100%","65%","flex")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","80%","100%","flex")
+root.children[0].children[3].children[1].children[2].style.flexDirection="column"
+//* 마이페이지 시작 컨테이너---------------------------------------------------------
+//* 아이디 컨테이너----------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","7%","flex")
+root.children[0].children[3].children[1].children[2].children[1].innerText="wlals155님 환영합니다"
+root.children[0].children[3].children[1].children[2].children[1].style.textAlign="center"
+
+
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 마이 페이지 첫번째 박스 요소 컨테이너----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","15%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[3],"div","33%","100%","")
+root.children[0].children[3].children[1].children[2].children[3].children[0].innerText="회원정보수정"
+makeTag(root.children[0].children[3].children[1].children[2].children[3],"div","33%","100%","")
+makeTag(root.children[0].children[3].children[1].children[2].children[3],"div","33%","100%","")
+root.children[0].children[3].children[1].children[2].children[3].children[2].innerText="주문내역"
+
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 마이 페이지 두번째 박스 요소 컨테이너----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","15%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[5],"div","33%","100%","")
+root.children[0].children[3].children[1].children[2].children[5].children[0].innerText="쿠폰"
+makeTag(root.children[0].children[3].children[1].children[2].children[5],"div","33%","100%","")
+makeTag(root.children[0].children[3].children[1].children[2].children[5],"div","33%","100%","")
+root.children[0].children[3].children[1].children[2].children[5].children[2].innerText="포인트"
+
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 마이 페이지 세번째 박스 요소 컨테이너----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","15%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[7],"div","33%","100%","")
+root.children[0].children[3].children[1].children[2].children[7].children[0].innerText="게시물"
+makeTag(root.children[0].children[3].children[1].children[2].children[7],"div","33%","100%","")
+makeTag(root.children[0].children[3].children[1].children[2].children[7],"div","33%","100%","")
+root.children[0].children[3].children[1].children[2].children[7].children[2].innerText="위시리스트"
+
+
+
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+//makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+
+
+
+
+
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3].children[1],"div","5%","100%")
+makeTag(root.children[0].children[3],"div","100%","10%")
+//*회원가입 버튼 컨테이너------------------------------------------------------------
+makeTag(root.children[0].children[3],"div","100%","20%","flex")
+makeTag(root.children[0].children[3].children[3],"div","20%","100%")
+makeTag(root.children[0].children[3].children[3],"button","60%","100%")
+root.children[0].children[3].children[3].children[1].innerText="로그아웃"
+root.children[0].children[3].children[3].children[1].style.textAlign="center"
+
+makeTag(root.children[0].children[3].children[3],"div","20%","100%")
+//*----------------------------------------------------------------------------------------
+
+makeTag(root.children[0].children[3],"div","100%","10%")
+
+
+
 
 
 
