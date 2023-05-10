@@ -2,11 +2,6 @@ import http from 'http'
 import url from 'url'
 import fs from 'fs'
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename); //es6에서는 __dirname 지원 X
-const filePath = path.join(__dirname,'/layout1.html');
 
 const server = http.createServer((req,res)=>{
   if(req.method=="GET"){
@@ -18,24 +13,28 @@ const server = http.createServer((req,res)=>{
       }
       else{
         res.statusCode=200;
-        res.setHeader('Content-Type','text/javascript');
-        console.log(req.url)
-        res.end(data)
+        res.setHeader('Content-Type','text/html');
+        console.log(req)
+        res.write(data)
+        res.end()
     }
-    if(req.url=="/favicon.ico"){
-      fs.readFile('./core.mjs','utf-8',(err,data)=>{
-        console.log(data)
+    if(req.url.startsWith("/")){
+      fs.readFile('./core.mjs','utf-8',(err,data1)=>{
+        // res.write(data1)
+        res.end()
+        
+        // console.log(data1)
+
       })
-      fs.readFile('./TopLayout.mjs','utf-8',(err,data)=>{
-        console.log(data)
+      fs.readFile('./TopLayout.mjs','utf-8',(err,data2)=>{
+        // res.write(data2)
+        res.end()
+        // console.log(data2)
       })
     }
   })  
   
 }
-  //   res.write("zz")
-  //   console.log(req)
-  // res.end()
 });
 
 server.listen(3000,()=>{
