@@ -26,8 +26,7 @@ const server = http.createServer((req,res)=>{
             else{
             
             res.writeHead(200,'Content-Type','text/javascript');
-            res.write(data1);
-            res.end();
+            res.end(data1);
             }
           })
         }
@@ -38,18 +37,16 @@ const server = http.createServer((req,res)=>{
             }
             else{
             res.writeHead(200,'Content-Type','text/javascript');
-            res.write(data2);
-            res.end();
+            res.end(data2);
             }
           })
-
         }
-    }
+      }
     
-  })
+    })
 
-}}
-);
+  }
+});
 
 server.listen(3000,()=>{
   console.log("서버가동")
