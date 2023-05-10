@@ -18,7 +18,7 @@ const server = http.createServer((req,res)=>{
         res.write(data)
         res.end()
 
-        if(req.url=='/core.js'){
+        if(req.url==='/core.js'){
           fs.readFile('./core.js','utf-8',(err,data1)=>{
             if(err){
               throw new Error
@@ -30,7 +30,7 @@ const server = http.createServer((req,res)=>{
             }
           })
         }
-        if(req.url=='/TopLayout.js'){
+        else if(req.url==='/TopLayout.js'){
           fs.readFile('./TopLayout.js','utf-8',(err,data2)=>{
             if(err){
               console.log(err)
@@ -40,6 +40,11 @@ const server = http.createServer((req,res)=>{
             res.end(data2);
             }
           })
+        }
+        else{
+          console.log(data)
+
+          
         }
       }
     
