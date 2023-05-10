@@ -19,7 +19,7 @@ function join(object){
   connection.connect(err=>{
     if(err){
       console.log("DB와 연결중에 에러가 발생했습니다.");
-    connection.end();
+    // connection.end();
 
     }
     else
@@ -29,20 +29,20 @@ function join(object){
 connection.query(`SELECT * FROM test.new_table WHERE userid ="${object.userid}"`,(error,results)=>{
   if(error){
     console.log("에러발생")
-    connection.end();
-
+    // connection.end();
   }
   else{
     if(results.length>=1){
       console.log("아이디 중복 발생")
-      connection.end();
-
+      // connection.end();
       return false;
     }
     else{
-      connection.query(`insert into test.new_table(userid, password, name, number1, number2, number3, email) values ('${object.userid}', '${object.password}','${object.name}','${object.number1}', '${object.number2}','${object.number3}','${object.email}')`, function (error, results1, fields) {
+      connection.query(`insert into test.new_table(userid, password, name, number1, number2, number3, email) values ('
+      ${object.userid}', '${object.password}','${object.name}',${object.number1}, ${object.number2},${object.number3},'${object.email}
+      ')`, function (error, results1, fields) {
         if (error) {
-          console.log("error")
+          console.log(error)
           return false;
         }
         else{
