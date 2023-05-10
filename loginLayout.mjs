@@ -204,7 +204,7 @@ makeTag(root.children[0].children[3].children[3],"div","15%","100%")
 
 
 makeTag(root.children[0].children[3],"div","100%","2%")
-//*아이디 비밀번호 회원가입 버튼
+//*아이디 비밀번호 회원가입 버튼-------------------------------------
 makeTag(root.children[0].children[3],"div","100%","10%","flex")
 makeTag(root.children[0].children[3].children[5],"div","5%","100%")
 makeTag(root.children[0].children[3].children[5],"div","30%","100%")
@@ -213,15 +213,14 @@ root.children[0].children[3].children[5].children[1].style.textAlign="center"
 makeTag(root.children[0].children[3].children[5],"div","30%","100%")
 root.children[0].children[3].children[5].children[2].innerText="비밀번호 찾기"
 root.children[0].children[3].children[5].children[2].style.textAlign="center"
-makeTag(root.children[0].children[3].children[5],"div","30%","100%"5
+makeTag(root.children[0].children[3].children[5],"div","30%","100%")
 root.children[0].children[3].children[5].children[3].innerText="회원가입"
 root.children[0].children[3].children[5].children[3].style.textAlign="center"
-
 makeTag(root.children[0].children[3].children[5],"div","5%","100%")
-
+//*--------------------------------------------------------------->
 
 makeTag(root.children[0].children[3],"div","100%","2%")
-//*네이버 카카오 로그인 버튼
+//*네이버 카카오 로그인 버튼----------------------------------------
 makeTag(root.children[0].children[3],"div","100%","10%")
 makeTag(root.children[0].children[3],"div","100%","50%")
 

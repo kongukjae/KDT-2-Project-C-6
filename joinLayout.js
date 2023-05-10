@@ -162,26 +162,72 @@ root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
 root.children[0].children[3].style.flexDirection="column";
 
 makeTag(root.children[0].children[3],"div","100%","5%")
-//* 회원가입 정보 입력 큰 컨테이너
+//* 회원가입 정보 입력 큰 컨테이너----------------------------------------------------------
 makeTag(root.children[0].children[3],"div","100%","65%","flex")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","80%","100%","flex")
 root.children[0].children[3].children[1].children[2].style.flexDirection="column"
 //* 회원가입 정보 입력 시작 컨테이너---------------------------------------------------------
+//* 아이디 컨테이너----------------------------------------------------------------------------
 makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
-makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[1],"div","30%","100%","")
+root.children[0].children[3].children[1].children[2].children[1].children[0].innerText="아이디*"
+makeTag(root.children[0].children[3].children[1].children[2].children[1],"input","40%","100%","")
+makeTag(root.children[0].children[3].children[1].children[2].children[1],"div","5%","100%","")
+makeTag(root.children[0].children[3].children[1].children[2].children[1],"button","25%","100%","")
+root.children[0].children[3].children[1].children[2].children[1].children[3].innerText="중복확인"
 
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 비밀번호----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[3],"div","30%","100%","")
+root.children[0].children[3].children[1].children[2].children[3].children[0].innerText="비밀번호*"
+makeTag(root.children[0].children[3].children[1].children[2].children[3],"input","70%","100%","")
+//* ----------------------------------------------------------------------------------------------
+
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 비밀번호 확인----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[5],"div","30%","100%")
+root.children[0].children[3].children[1].children[2].children[5].children[0].innerText="비밀번호 확인"
+makeTag(root.children[0].children[3].children[1].children[2].children[5],"input","70%","100%")
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 이름----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[7],"div","30%","100%")
+root.children[0].children[3].children[1].children[2].children[7].children[0].innerText="이름*"
+makeTag(root.children[0].children[3].children[1].children[2].children[7],"input","70%","100%")
+//* ----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 전화번호----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[9],"div","30%","100%")
+root.children[0].children[3].children[1].children[2].children[9].children[0].innerText="전화번호"
+makeTag(root.children[0].children[3].children[1].children[2].children[9],"input","24%","100%")
+makeTag(root.children[0].children[3].children[1].children[2].children[9],"div","3%","100%")
+root.children[0].children[3].children[1].children[2].children[9].children[2].innerText="-"
+makeTag(root.children[0].children[3].children[1].children[2].children[9],"input","20%","100%")
+makeTag(root.children[0].children[3].children[1].children[2].children[9],"div","3%","100%")
+root.children[0].children[3].children[1].children[2].children[9].children[4].innerText="-"
+makeTag(root.children[0].children[3].children[1].children[2].children[9],"input","20%","100%")
+//* ----------------------------------------------------------------------------------------------
+
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
+//* 이메일----------------------------------------------------------------------------------------------
+makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%","flex")
+makeTag(root.children[0].children[3].children[1].children[2].children[11],"div","30%","100%")
+root.children[0].children[3].children[1].children[2].children[11].children[0].innerText="이메일*"
+makeTag(root.children[0].children[3].children[1].children[2].children[11],"input","45%","100%")
+makeTag(root.children[0].children[3].children[1].children[2].children[11],"button","35%","100%")
+root.children[0].children[3].children[1].children[2].children[11].children[2].innerText="중복확인"
+
+
+
+//*------------------------------------------------------------------------------------------
 
 
 
@@ -190,15 +236,15 @@ makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3],"div","100%","10%")
-//*회원가입 버튼 컨테이너
+//*회원가입 버튼 컨테이너------------------------------------------------------------
 makeTag(root.children[0].children[3],"div","100%","20%","flex")
 makeTag(root.children[0].children[3].children[3],"div","20%","100%")
-makeTag(root.children[0].children[3].children[3],"div","60%","100%")
+makeTag(root.children[0].children[3].children[3],"button","60%","100%")
 root.children[0].children[3].children[3].children[1].innerText="회원가입"
 root.children[0].children[3].children[3].children[1].style.textAlign="center"
 
 makeTag(root.children[0].children[3].children[3],"div","20%","100%")
-
+//*----------------------------------------------------------------------------------------
 
 makeTag(root.children[0].children[3],"div","100%","10%")
 
