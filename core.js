@@ -53,4 +53,4 @@ console.dir(imgTag)
 
 }
 
-export {makeTag,makeItems} 
+// export {makeTag,makeItems} 
