@@ -17,7 +17,9 @@ let listOnOff = true;
   for(let i=0;i<3;i++){
     makeTag(root.children[0].children[0],"div","","")
     root.children[0].children[0].children[i].style.flex='1';
-    
+    root.children[0].children[0].children[i].addEventListener('click',()=>{
+      window.location = '/html/mypage.html'
+    })
  
     
   }

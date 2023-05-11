@@ -25,8 +25,24 @@ function makeItems(target,brandName,content,price) {
   let imgTag = document.createElement('img')
   imgTag.style.width="50%"
   imgTag.style.height="10%"
-  imgTag.src="./images.jpg"
-console.dir(imgTag)
+  imgTag.src="/cuttttttttttsddfjksldfjlkdsjflk"
+  console.dir(imgTag)
+
+  setTimeout(()=>{
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("get", '/cuteeee');
+    xhr.responseType = "blob";
+    xhr.send()
+    xhr.addEventListener("load", function () {
+      console.log(xhr.response);
+      let resultURL = URL.createObjectURL(xhr.response);
+      imgTag.src = resultURL
+    });
+    
+    
+  },1000)
+
 
   for(let i =0;i<2;i++){
     let div = document.createElement('div');

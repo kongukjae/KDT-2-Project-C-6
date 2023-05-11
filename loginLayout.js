@@ -1,4 +1,3 @@
-import {makeTag,makeItems} from './core.mjs'
 
 let root = document.getElementById('root');
 let listOnOff = true;
@@ -217,6 +216,10 @@ makeTag(root.children[0].children[3].children[5],"div","30%","100%")
 root.children[0].children[3].children[5].children[3].innerText="회원가입"
 root.children[0].children[3].children[5].children[3].style.textAlign="center"
 makeTag(root.children[0].children[3].children[5],"div","5%","100%")
+root.children[0].children[3].children[5].children[3].addEventListener('click',()=>{
+  window.location = '/html/join.html'
+})
+
 //*--------------------------------------------------------------->
 
 makeTag(root.children[0].children[3],"div","100%","2%")
