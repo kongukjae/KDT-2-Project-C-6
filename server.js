@@ -2,14 +2,10 @@ import http from 'http'
 import url from 'url'
 import fs from 'fs'
 import path from "path";
-import { fileURLToPath } from "url";
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename); //es6에서는 __dirname 지원 X
-// const filePath = path.join(__dirname,'/layout1.html');
 
 const server = http.createServer((req,res)=>{
-  if(req.method=="GET"){
+  // const url = url.parse(req.url);
+  if(req.method=="GET"){ 
     fs.readFile('./layout1.html','utf-8',(err,data)=>{
       if(err){
         console.log(err);
@@ -17,25 +13,44 @@ const server = http.createServer((req,res)=>{
         res.end('err')
       }
       else{
-        res.statusCode=200;
-        res.setHeader('Content-Type','text/javascript');
+        res.writeHead(200,'Content-Type','text/html');
         console.log(req.url)
-        res.end(data)
-    }
-    if(req.url=="/favicon.ico"){
-      fs.readFile('./core.mjs','utf-8',(err,data)=>{
-        console.log(data)
-      })
-      fs.readFile('./TopLayout.mjs','utf-8',(err,data)=>{
-        console.log(data)
-      })
-    }
-  })  
-  
-}
-  //   res.write("zz")
-  //   console.log(req)
-  // res.end()
+        res.write(data)
+        res.end()
+
+        if(req.url==='/core.js'){
+          fs.readFile('./core.js','utf-8',(err,data1)=>{
+            if(err){
+              throw new Error
+            }
+            else{
+            
+            res.writeHead(200,'Content-Type','text/javascript');
+            res.end(data1);
+            }
+          })
+        }
+        else if(req.url==='/TopLayout.js'){
+          fs.readFile('./TopLayout.js','utf-8',(err,data2)=>{
+            if(err){
+              console.log(err)
+            }
+            else{
+            res.writeHead(200,'Content-Type','text/javascript');
+            res.end(data2);
+            }
+          })
+        }
+        else{
+          console.log(data)
+
+          
+        }
+      }
+    
+    })
+
+  }
 });
 
 server.listen(3000,()=>{

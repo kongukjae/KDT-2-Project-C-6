@@ -46,15 +46,4 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
   }
 })
 connection.end();
-<<<<<<< HEAD
-  
-  
-
-
-
- }
-
-join(object)
-=======
 }
->>>>>>> main

@@ -1,4 +1,4 @@
-import {makeTag,makeItems} from './core.mjs'
+// import {makeTag,makeItems} from './core.js'
 let root = document.getElementById('root');
 let listOnOff = true;
 

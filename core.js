@@ -1,12 +1,12 @@
 
 function makeTag(target,tagName,width,height,display){
   let tag = document.createElement(tagName);
-  target.appendChild(tag)
-  tag.style.width=width
-  tag.style.height=height
-  tag.style.display=display
-  tag.style.border='1px solid black'
-  tag.style.boxSizing='border-box'
+  target.appendChild(tag);
+  tag.style.width=width;
+  tag.style.height=height;
+  tag.style.display=display;
+  tag.style.border='1px solid black';
+  tag.style.boxSizing='border-box';
 }
 
 function makeItems(target,brandName,content,price) {
@@ -42,15 +42,13 @@ console.dir(imgTag)
     div.style.height="20%"
     div.style.textAlign="center";
 
-    div.innerText=array[i]
+    div.innerText=array[i];
     liTag.children[1].appendChild(div);
   }
 
   target.appendChild(liTag);
   target.style.gridTemplateRows="50%";
 
-  
-
 }
 
-export {makeTag,makeItems} 
+// export {makeTag,makeItems} 
