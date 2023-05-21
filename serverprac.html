@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <button id="btn"></button>
+    <script>
+        let root = document.getElementById('root')
+        let btn = document.getElementById('btn')
+        let count = 0;
+        btn.addEventListener('click',()=>{
+            count ++;
+            console.log(count)
+            var xhr = new XMLHttpRequest();
+            var url = '/';  // 요청할 URL을 지정합니다.
+
+            xhr.open('GET', url, true);  // POST 요청을 설정합니다.
+            xhr.setRequestHeader('Content-Type', 'text/html');  // 요청 헤더에 Content-Type을 설정합니다.
+            xhr.onload = function(){
+                if(xhr.status==200){
+                    root.innerText=xhr.response;
+
+                }
+                else{
+                    console.err("에러발생")
+                }
+            }
+
+            xhr.send(count);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
+
+        })
+    </script>
+</body>
+</html>
