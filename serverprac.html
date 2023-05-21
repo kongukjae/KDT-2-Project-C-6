@@ -11,19 +11,21 @@
     <button id="btn"></button>
     <script>
         let root = document.getElementById('root')
+        root.innerText="0"
         let btn = document.getElementById('btn')
         let count = 0;
         btn.addEventListener('click',()=>{
             count ++;
             console.log(count)
-            var xhr = new XMLHttpRequest();
-            var url = '/a';  // 요청할 URL을 지정합니다.
+            let xhr = new XMLHttpRequest();
+            let url = '/a';  // 요청할 URL을 지정합니다.
 
             xhr.open('POST', url, true);  // POST 요청을 설정합니다.
             xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
             xhr.onload = function(){
                 if(xhr.status==200){
-                    root.innerText=xhr.response;
+                    console.log(xhr.response)
+                    root.innerText=`${xhr.response}`;
                 }
                 else{
                     console.err("에러발생")

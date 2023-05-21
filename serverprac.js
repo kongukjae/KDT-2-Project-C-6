@@ -18,9 +18,12 @@ const server = http.createServer((req,res)=>{
     if(req.method=="POST" && req.url=="/a"){
         let data
         req.on('data',chunk=>{
+            
             data=chunk;
+            console.log("server",data)
         })
         req.on('end',()=>{
+            res.writeHead(200,{'Content-Type':'text/plain'});
             res.end(data)
         })
     }
