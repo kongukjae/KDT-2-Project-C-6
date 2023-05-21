@@ -1,6 +1,5 @@
 import http from 'http'
 import fs from 'fs'
-import { resourceLimits } from 'worker_threads'
 
 const server = http.createServer((req,res)=>{
     if(req.method="GET" && req.url=='/'){
@@ -14,6 +13,15 @@ const server = http.createServer((req,res)=>{
                 res.writeHead(200,'Content-Type','text/html')
                 res.end(data)
             }
+        })
+    }
+    if(req.method=="POST" && req.url=="/a"){
+        let data
+        req.on('data',chunk=>{
+            data=chunk;
+        })
+        req.on('end',()=>{
+            res.end(data)
         })
     }
 })
