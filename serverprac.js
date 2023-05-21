@@ -15,11 +15,11 @@ const server = http.createServer((req,res)=>{
             }
         })
     }
-    if(req.method=="POST" && req.url=="/a"){
-        let data
+    if(req.method=="POST" && req.url=="/"){
+        let data=''
         req.on('data',chunk=>{
             
-            data=chunk;
+            data+=chunk;
             console.log("server",data)
         })
         req.on('end',()=>{
