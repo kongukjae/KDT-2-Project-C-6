@@ -40,12 +40,43 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
-  else if(req.method==="GET" && req.url==="/mypage"){
+
+
+  if(req.method==="GET" && req.url==="/mypage"){
+    fs.readFile('./views/html/myPage.html','utf-8',(err,data)=>{
+       if(err){
+        console.log(err)
+       }
+       else{
+        res.writeHead(200,'Content-Type','text/html');
+        console.log(req.url)
+        res.write(data)
+        res.end()
+       }
+    })
+    
+  }
+
+  if(req.url==="/modules/core.js"){
+    fs.readFile('./modules/core.js','utf-8',(err,data)=>{
+      if(err){
+        console.log(err)
+      }
+      else{
+      console.log(req.url)
+      res.writeHead(200,'Content-Type','text/javascript');
+      res.end(data);
+      }
+    })
+  }
+   if(req.url==="/views/js/mypageLayout.js"){
     fs.readFile('./views/js/mypageLayout.js','utf-8',(err,data)=>{
       if(err){
         console.log(err)
       }
       else{
+      console.log("a")
+      console.log(req.url)
       res.writeHead(200,'Content-Type','text/javascript');
       res.end(data);
       }
