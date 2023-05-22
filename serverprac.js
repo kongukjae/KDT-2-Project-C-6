@@ -19,7 +19,7 @@ const server = http.createServer((req,res)=>{
         let data=''
         req.on('data',chunk=>{
             
-            data+=chunk;
+            data=chunk;
             console.log("server",data)
         })
         req.on('end',()=>{
