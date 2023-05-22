@@ -1,5 +1,5 @@
 import http from 'http'
-import fs from 'fs'
+import fs, { rmSync } from 'fs'
 
 const server = http.createServer((req,res)=>{
   // const url = url.parse(req.url);
@@ -82,6 +82,41 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
+  if(req.method==="GET" && req.url==="/login"){
+    fs.readFile('./views/html/loginPage.html','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/html');
+        res.end(data);
+      }
+    })
+  }
+  if(req.url==="/modules/core.js"){
+    fs.readFile('./modules/core.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/javascript');
+        res.end(data);
+      }
+    })
+  }
+  if(req.url==="/views/js/loginLayout.js"){
+    fs.readFile('./views/js/loginLayout.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/javascript')
+        res.end(data);
+      }
+    })
+  }
+  
+  
 })
 
    
