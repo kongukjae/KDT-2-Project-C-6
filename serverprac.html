@@ -8,18 +8,17 @@
 </head>
 <body>
     <div id="root"></div>
-    <button id="btn"></button>
+    <button id="btn">a</button>
     <script>
-
         let root = document.getElementById('root')
         root.innerText="0"
         let btn = document.getElementById('btn')
         let count = 0;
-        const xhr = new XMLHttpRequest();
         btn.addEventListener('click',()=>{
             count ++;
             
             console.log(count)
+            let xhr = new XMLHttpRequest();
             let url = 'http://localhost:3000/';  // 요청할 URL을 지정합니다.
 
             xhr.open('POST', url, true);  // POST 요청을 설정합니다.
