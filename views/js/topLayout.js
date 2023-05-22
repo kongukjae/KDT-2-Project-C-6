@@ -1,4 +1,3 @@
-// import {makeTag,makeItems} from './core.js'
 
 let root = document.getElementById('root');
 let listOnOff = true;
@@ -99,6 +98,10 @@ let listOnOff = true;
   makeTag(root.children[0].children[2].children[1],"div","35%","100%","")
   root.children[0].children[2].children[1].children[1].innerText="Mypage"
   root.children[0].children[2].children[1].children[1].style.textAlign="center"
+  root.children[0].children[2].children[1].children[1].addEventListener('click',()=>{
+    window.location.href='/mypage'
+  })
+
 
   makeTag(root.children[0].children[2].children[1],"div","10%","100%","")
   makeTag(root.children[0].children[2].children[1],"div","35%","100%","")
