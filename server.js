@@ -148,6 +148,17 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
+  if(req.method==="POST" && req.url==="/a"){
+    let data
+    req.on('data',(chunk)=>{
+      data+=chunk
+  })
+  req.on('end',()=>{
+      console.log(data);
+      //res.writeHead(200,'text/plain')
+      res.end(data)
+  })
+  }
   
 })
 
