@@ -2,7 +2,7 @@ import http from 'http'
 
 const server = http.createServer((req,res)=>{
     if(req.method==="GET" && req.url==="/"){
-        res.writeHead(200,'Content-Type','text/plain')
+        res.writeHead(200,'Content-Type','text/html')
         let firestPage=`
         <!DOCTYPE html>
         <html lang="en">
@@ -20,22 +20,22 @@ const server = http.createServer((req,res)=>{
         </form>
         </body>
         </html>`
-        res.write()
+        res.write(firestPage)
         res.end()
         
     }
     
-    // let data=''
-    // if(req.method==="POST" && req.url==="/a"){
-    //     req.on('data',(chunk)=>{
-    //         data+=chunk
-    //     })
-    //     req.on('end',()=>{
-    //         console.log(data);
-    //         res.writeHead(200,'text/plain')
-    //         res.end(data)
-    //     })
-    // }
+    let data=''
+    if(req.method==="POST" && req.url==="/a"){
+        req.on('data',(chunk)=>{
+            data+=chunk
+        })
+        req.on('end',()=>{
+            console.log(data);
+            res.writeHead(200,'text/plain')
+            res.end(data)
+        })
+    }
 
 })
 
