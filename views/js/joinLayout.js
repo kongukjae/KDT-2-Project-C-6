@@ -162,7 +162,7 @@ root.children[0].children[3].style.flexDirection="column";
 
 makeTag(root.children[0].children[3],"div","100%","5%")
 //* 회원가입 정보 입력 큰 컨테이너----------------------------------------------------------
-makeTag(root.children[0].children[3],"div","100%","65%","flex")
+makeTag(root.children[0].children[3],"form","100%","65%","flex")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","80%","100%","flex")
