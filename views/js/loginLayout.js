@@ -215,6 +215,9 @@ root.children[0].children[3].children[5].children[2].style.textAlign="center"
 makeTag(root.children[0].children[3].children[5],"div","30%","100%")
 root.children[0].children[3].children[5].children[3].innerText="회원가입"
 root.children[0].children[3].children[5].children[3].style.textAlign="center"
+root.children[0].children[3].children[5].children[3].addEventListener('click',()=>{
+  window.location.href="/join"
+})
 
 makeTag(root.children[0].children[3].children[5],"div","5%","100%")
 

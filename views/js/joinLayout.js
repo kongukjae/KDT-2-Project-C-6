@@ -1,4 +1,3 @@
-import {makeTag,makeItems} from './core.mjs'
 
 let root = document.getElementById('root');
 let listOnOff = true;

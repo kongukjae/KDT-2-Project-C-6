@@ -115,7 +115,39 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
-  
+  if(req.method==="GET" && req.url==="/join"){
+    fs.readFile('./views/html/joinPage.html','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/html')
+        res.end(data)
+      }
+    })
+  }
+  if(req.url==="/modules/core.js"){
+    fs.readFile('./modules/core.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/html')
+        res.end(data)
+      }
+    })
+  }
+  if(req.url==="/views/js/joinLayout.js"){
+    fs.readFile('./views/js/joinLayout.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/javascript')
+        res.end(data)
+      }
+    })
+  }
   
 })
 
