@@ -253,8 +253,20 @@ root.children[0].children[3].children[3].children[1].innerText="회원가입"
 root.children[0].children[3].children[3].children[1].style.textAlign="center"
 root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
   let data=""
-  data=
-root.children[0].children[3].children[1].children[2].children[1].children[1].value
+  data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[7].children[1].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[9].children[1].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[9].children[3].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[9].children[5].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[11].children[1].value
+
+
+
+
+
+
+  
   let xhr = new XMLHttpRequest();
   let url = 'http://localhost:3000/a';  // 요청할 URL을 지정합니다.
 

@@ -156,7 +156,7 @@ const server = http.createServer((req,res)=>{
   req.on('end',()=>{
       console.log(data);
       //res.writeHead(200,'text/plain')
-      res.end(data)
+      res.end()
   })
   }
   
