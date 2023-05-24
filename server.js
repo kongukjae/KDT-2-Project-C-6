@@ -1,5 +1,6 @@
 import http from 'http'
 import fs, { rmSync } from 'fs'
+import { join } from 'path';
 
 const server = http.createServer((req,res)=>{
   // const url = url.parse(req.url);
@@ -137,6 +138,17 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
+  if(req.url==="/modules/join.js"){
+    fs.readFile('./modules/join.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/javascript')
+        res.end(data)
+      }
+    })
+  }
   if(req.url==="/views/js/joinLayout.js"){
     fs.readFile('./views/js/joinLayout.js','utf-8',(err,data)=>{
       if(err){
@@ -151,7 +163,7 @@ const server = http.createServer((req,res)=>{
   if(req.method==="POST" && req.url==="/a"){
     let data
     req.on('data',(chunk)=>{
-      data+=chunk
+      data+=chunk      
   })
   req.on('end',()=>{
       console.log(data);
