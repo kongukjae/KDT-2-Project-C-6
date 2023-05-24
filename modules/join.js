@@ -1,16 +1,19 @@
 let object = {
   id:"wlals12345601",
   password:"dD1354268",
-  name:"강지민"
+  name:"강지민",
+  phone1:10,
+  phone2:4929,
+  phone3:7381
 }
 function join(object){
   let mysql = require('mysql2');
   let connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'dD1354268!!',
-    port     : 3307,
-    database : 'test'
+    password : 'dD1354268!',
+    port     : 3306,
+    database : 'gymwear'
   });
   connection.connect(err=>{
     if(err){
@@ -20,7 +23,7 @@ function join(object){
     console.log("DB와 연결 완료");
   });
 
-connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error,results)=>{
+connection.query(`SELECT * FROM gymwear.new_table WHERE id ="${object.id}"`,(error,results)=>{
   if(error){
     console.log("에러발생")
   }
@@ -30,7 +33,7 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
       return false;
     }
     else{
-      connection.query(`insert into test.new_table(id_, password, name) values ('${object.id}', '${object.password}','${object.name}')`, function (error, results1, fields) {
+      connection.query(`insert into gymwear.new_table(id, password, name, phone1, phone2, phone3, email) values ('${object.id}', '${object.password}','${object.name}','${object.phone1}','${object.phone2}','${object.phone3}')`, function (error, results1, fields) {
         if (error) {
           console.log("error")
           return false;
@@ -47,3 +50,5 @@ connection.query(`SELECT * FROM test.new_table WHERE id_ ="${object.id}"`,(error
 })
 connection.end();
 }
+
+join(object)
