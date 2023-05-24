@@ -154,7 +154,7 @@ root.children[0].children[0].children[2].children[1].addEventListener('click',()
  
 
 //* 중간 화면 (cart container)
-makeTag(root.children[0],"div","100%","70%","flex")
+makeTag(root.children[0],"form","100%","70%","flex")
 root.children[0].children[3].style.overflowX="auto";
 root.children[0].children[3].style.overflowY="scroll";
 root.children[0].children[3].style.gridTemplateColumns="1fr 1fr";
@@ -163,6 +163,9 @@ root.children[0].children[3].style.flexDirection="column";
 makeTag(root.children[0].children[3],"div","100%","5%")
 //* 회원가입 정보 입력 큰 컨테이너----------------------------------------------------------
 makeTag(root.children[0].children[3],"form","100%","65%","flex")
+root.children[0].children[3].children[1].method="post"
+root.children[0].children[3].children[1].action="/a"
+
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","80%","100%","flex")
@@ -248,9 +251,11 @@ makeTag(root.children[0].children[3],"div","100%","10%")
 //*회원가입 버튼 컨테이너------------------------------------------------------------
 makeTag(root.children[0].children[3],"div","100%","20%","flex")
 makeTag(root.children[0].children[3].children[3],"div","20%","100%")
-makeTag(root.children[0].children[3].children[3],"button","60%","100%")
+makeTag(root.children[0].children[3].children[3],"input","60%","100%")
 root.children[0].children[3].children[3].children[1].innerText="회원가입"
 root.children[0].children[3].children[3].children[1].style.textAlign="center"
+root.children[0].children[3].children[3].children[1].type="submit"
+
 root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
   let data=""
   data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
@@ -272,7 +277,7 @@ root.children[0].children[3].children[3].children[1].addEventListener('click',()
 
       xhr.open('POST', url, true);  // POST 요청을 설정합니다.
       xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
-      xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
+      // xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
       xhr.onload = function(){
         if(xhr.status===200){
           console.log(xhr.response)

@@ -1,6 +1,8 @@
 import http from 'http'
 import fs, { rmSync } from 'fs'
 import { join } from 'path';
+import mysql from 'mysql2'
+
 
 const server = http.createServer((req,res)=>{
   // const url = url.parse(req.url);
@@ -161,6 +163,7 @@ const server = http.createServer((req,res)=>{
     })
   }
   if(req.method==="POST" && req.url==="/a"){
+    console.log(req.url)
     let data
     req.on('data',(chunk)=>{
       data+=chunk      
