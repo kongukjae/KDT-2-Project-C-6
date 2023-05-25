@@ -295,7 +295,8 @@ root.children[0].children[3].children[3].children[1].addEventListener('click',()
       xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
       xhr.onload = function(){
         if(xhr.status===200){
-          console.log(xhr.response)
+          window.alert(xhr.response)
+          window.location.href="/login"
           }
         else{
           console.err("에러발생",xhr.status)
