@@ -1,4 +1,4 @@
-import mysql from mysql2
+import mysql from 'mysql'
 let object = {
   id: "wlals1234560123",
   password: "dD1354268",
@@ -48,4 +48,4 @@ function join(object) {
   });
 }
 
-join(object)
+export default join

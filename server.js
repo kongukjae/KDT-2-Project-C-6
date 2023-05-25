@@ -1,5 +1,6 @@
 import http from 'http'
-import fs, { rmSync } from 'fs'
+import fs from 'fs' 
+import join from './modules/join.js'
 
 
 const server = http.createServer((req,res)=>{
@@ -138,30 +139,31 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
-  if(req.url==="/modules/mysql.js"){
-    fs.readFile('./modules/mysql.js','utf-8',(err,data)=>{
-      if(err){
-        console.err("에러발생")
-      }
-      else{
-        res.writeHead(200,'Content-Type','text/javascript')
-        res.end(data)
-      }
-    })
-  }
-  if(req.url==="/modules/join.js"){
-    fs.readFile('./modules/join.js','utf-8',(err,data)=>{
-      if(err){
-        console.err("에러발생")
-      }
-      else{
-        res.writeHead(200,'Content-Type','text/javascript')
-        res.end(data)
-      }
-    })
-  }
+ 
+  // if(req.url==="/modules/join.js"){
+  //   fs.readFile('./modules/join.js','utf-8',(err,data)=>{
+  //     if(err){
+  //       console.err("에러발생")
+  //     }
+  //     else{
+  //       res.writeHead(200,'Content-Type','text/javascript')
+  //       res.end(data)
+  //     }
+  //   })
+  // }
   if(req.url==="/views/js/joinLayout.js"){
     fs.readFile('./views/js/joinLayout.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/javascript')
+        res.end(data)
+      }
+    })
+  }
+  if(req.url==="/modules/mysqlreq.js"){
+    fs.readFile('./modules/mysqlreq.js','utf-8',(err,data)=>{
       if(err){
         console.err("에러발생")
       }
@@ -176,6 +178,8 @@ const server = http.createServer((req,res)=>{
     let data
     req.on('data',(chunk)=>{
       data+=chunk      
+      console.log(data)
+    //여기에 mysql 로직
   })
   req.on('end',()=>{
       console.log(data);
