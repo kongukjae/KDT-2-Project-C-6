@@ -1,6 +1,7 @@
 import http from 'http'
 import fs from 'fs' 
 import join from './modules/join.js'
+import join2 from './modules/join2.js'
 
 
 const server = http.createServer((req,res)=>{
@@ -174,15 +175,36 @@ const server = http.createServer((req,res)=>{
     })
   }
   if(req.method==="POST" && req.url==="/a"){
-    console.log(req.url)
     let data=""
+    let data1={}
     req.on('data',(chunk)=>{
       data+=chunk      
-    //여기에 mysql 로직
-  })
+      let splitdata = data.split('&')
+      data1.id=splitdata[0]
+      data1.password=splitdata[1]
+      data1.name=splitdata[2]
+      data1.phone1=splitdata[3]
+      data1.phone2=splitdata[4]
+      data1.phone3=splitdata[5]
+      data1.email=splitdata[6]
+      console.log(data1)
+    })
+
   req.on('end',()=>{
-      //res.writeHead(200,'text/plain')
-      res.end()
+    join2(data1)
+    .then(result=>{
+        if(result===true){
+          res.writeHead(200,'text/plain')
+          res.end("회원가입 완료")
+        }
+        else{
+          res.writeHead(200,'text/plain')
+          res.end("회원가입 실패")
+        }
+    })
+    .catch(err=>{
+      console.err("err")
+    })
   })
   }
   if(req.method==="POST" && req.url==="/idcheck"){
@@ -213,7 +235,6 @@ const server = http.createServer((req,res)=>{
       .catch(error => {
         console.error(error);
       });
-      console.log(text)
     })
   }
   
