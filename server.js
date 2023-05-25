@@ -175,17 +175,25 @@ const server = http.createServer((req,res)=>{
   }
   if(req.method==="POST" && req.url==="/a"){
     console.log(req.url)
-    let data
+    let data=""
     req.on('data',(chunk)=>{
       data+=chunk      
-      console.log(data)
     //여기에 mysql 로직
   })
   req.on('end',()=>{
-      console.log(data);
       //res.writeHead(200,'text/plain')
       res.end()
   })
+  }
+  if(req.method==="POST" && req.url==="/idcheck"){
+    let data=""
+    req.on('data',(chunk)=>{
+      data+=chunk
+      console.log('id data'+data)
+    })
+    req.on('end',(chunk)=>{
+      res.end()    
+    })
   }
   
 })

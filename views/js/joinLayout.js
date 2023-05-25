@@ -164,7 +164,7 @@ makeTag(root.children[0].children[3],"div","100%","5%")
 //* 회원가입 정보 입력 큰 컨테이너----------------------------------------------------------
 makeTag(root.children[0].children[3],"form","100%","65%","flex")
 root.children[0].children[3].children[1].method="post"
-root.children[0].children[3].children[1].action="/a"
+root.children[0].children[3].children[1].action="/join"
 
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
 makeTag(root.children[0].children[3].children[1],"div","5%","100%")
@@ -181,6 +181,26 @@ root.children[0].children[3].children[1].children[2].children[1].children[1].nam
 makeTag(root.children[0].children[3].children[1].children[2].children[1],"div","5%","100%","")
 makeTag(root.children[0].children[3].children[1].children[2].children[1],"button","25%","100%","")
 root.children[0].children[3].children[1].children[2].children[1].children[3].innerText="중복확인"
+root.children[0].children[3].children[1].children[2].children[1].children[3].addEventListener('click',()=>{
+  let data=""
+    data= root.children[0].children[3].children[1].children[2].children[1].children[1].value
+    let xhr = new XMLHttpRequest();
+  let url = 'http://localhost:3000/idcheck';  // 요청할 URL을 지정합니다.
+
+      xhr.open('POST', url, true);  // POST 요청을 설정합니다.
+      xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
+      xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
+      xhr.onload = function(){
+        if(xhr.status===200){
+          console.log(xhr.response)
+
+          }
+        else{
+          console.err("에러발생",xhr.status)
+         }
+        }
+    
+})
 
 //* ----------------------------------------------------------------------------------------------
 makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
@@ -252,36 +272,37 @@ makeTag(root.children[0].children[3],"div","100%","10%")
 makeTag(root.children[0].children[3],"div","100%","20%","flex")
 makeTag(root.children[0].children[3].children[3],"div","20%","100%")
 makeTag(root.children[0].children[3].children[3],"input","60%","100%")
-root.children[0].children[3].children[3].children[1].innerText="회원가입"
 root.children[0].children[3].children[3].children[1].style.textAlign="center"
 root.children[0].children[3].children[3].children[1].type="submit"
+root.children[0].children[3].children[3].children[1].value="회원가입"
+console.dir(root.children[0].children[3].children[3].children[1])
 
-root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
-  let data=""
-  data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
-        root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
-        root.children[0].children[3].children[1].children[2].children[7].children[1].value + "&" +
-        root.children[0].children[3].children[1].children[2].children[9].children[1].value + "&" +
-        root.children[0].children[3].children[1].children[2].children[9].children[3].value + "&" +
-        root.children[0].children[3].children[1].children[2].children[9].children[5].value + "&" +
-        root.children[0].children[3].children[1].children[2].children[11].children[1].value
+// root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
+//   let data=""
+//   data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
+//         root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
+//         root.children[0].children[3].children[1].children[2].children[7].children[1].value + "&" +
+//         root.children[0].children[3].children[1].children[2].children[9].children[1].value + "&" +
+//         root.children[0].children[3].children[1].children[2].children[9].children[3].value + "&" +
+//         root.children[0].children[3].children[1].children[2].children[9].children[5].value + "&" +
+//         root.children[0].children[3].children[1].children[2].children[11].children[1].value
   
-  let xhr = new XMLHttpRequest();
-  let url = 'http://localhost:3000/a';  // 요청할 URL을 지정합니다.
+//   let xhr = new XMLHttpRequest();
+//   let url = 'http://localhost:3000/a';  // 요청할 URL을 지정합니다.
 
-      xhr.open('POST', url, true);  // POST 요청을 설정합니다.
-      xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
-      // xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
-      xhr.onload = function(){
-        if(xhr.status===200){
-          console.log(xhr.response)
-          root.innerText=`${xhr.response}`;
-          }
-        else{
-          console.err("에러발생",xhr.status)
-         }
-        }
-})
+//       xhr.open('POST', url, true);  // POST 요청을 설정합니다.
+//       xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
+//       // xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
+//       xhr.onload = function(){
+//         if(xhr.status===200){
+//           console.log(xhr.response)
+//           root.innerText=`${xhr.response}`;
+//           }
+//         else{
+//           console.err("에러발생",xhr.status)
+//          }
+//         }
+// })
 
 
 makeTag(root.children[0].children[3].children[3],"div","20%","100%")

@@ -1,6 +1,8 @@
-root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
-    let data=""
-    data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
+root.children[0].children[3].children[3].children[1].addEventListener('click',(e)=>{
+    e.preventDefault();
+      let data=""
+      console.log('data1: '+data)
+       data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
           root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
           root.children[0].children[3].children[1].children[2].children[7].children[1].value + "&" +
           root.children[0].children[3].children[1].children[2].children[9].children[1].value + "&" +

@@ -1,4 +1,4 @@
-import mysql from 'mysql'
+import mysql from 'mysql2'
 let object = {
   id: "wlals1234560123",
   password: "dD1354268",
@@ -30,17 +30,18 @@ function join(object) {
         } else {
           if (results.length >= 1) {
             console.log("아이디 중복 발생")
-          } else {
-            conn.query(`INSERT INTO gymwear.new_table(id, password, name, phone1, phone2, phone3, email) VALUES (
-              '${object.id}', '${object.password}','${object.name}','${object.phon1}', '${object.phone2}','${object.phone3}','${object.email}'
-            )`, function (error, results1, fields) {
-              if (error) {
-                console.err("데이터베이스에 데이터 쓰기 오류");
-              } else {
-                console.log('회원가입 완료:', results1);
-              }
-            });
-          }
+          } 
+          //else {
+            // conn.query(`INSERT INTO gymwear.new_table(id, password, name, phone1, phone2, phone3, email) VALUES (
+            //   '${object.id}', '${object.password}','${object.name}','${object.phon1}', '${object.phone2}','${object.phone3}','${object.email}'
+            // )`, function (error, results1, fields) {
+              // if (error) {
+              //   console.err("데이터베이스에 데이터 쓰기 오류");
+              // } else {
+              //   console.log('회원가입 완료:', results1);
+              // }
+            //});
+          //}
         }
         conn.release();
       })
