@@ -138,6 +138,17 @@ const server = http.createServer((req,res)=>{
       }
     })
   }
+  if(req.url==="/modules/mysql.js"){
+    fs.readFile('./modules/mysql.js','utf-8',(err,data)=>{
+      if(err){
+        console.err("에러발생")
+      }
+      else{
+        res.writeHead(200,'Content-Type','text/javascript')
+        res.end(data)
+      }
+    })
+  }
   if(req.url==="/modules/join.js"){
     fs.readFile('./modules/join.js','utf-8',(err,data)=>{
       if(err){
