@@ -193,7 +193,7 @@ const server = http.createServer((req,res)=>{
       let data1={};
       data1.id=data
       // console.log(data1)
-      
+      console.log(join(data1));
 
     })
     req.on('end',(chunk)=>{
