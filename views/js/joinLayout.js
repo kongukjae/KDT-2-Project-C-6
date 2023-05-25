@@ -193,7 +193,7 @@ root.children[0].children[3].children[1].children[2].children[1].children[3].add
       xhr.onload = function(){
         if(xhr.status===200){
           console.log(xhr.response)
-
+          window.alert(xhr.response)
           }
         else{
           console.err("에러발생",xhr.status)

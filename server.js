@@ -187,24 +187,46 @@ const server = http.createServer((req,res)=>{
   }
   if(req.method==="POST" && req.url==="/idcheck"){
     let data=""
+    let data1={};
+    let text =""
     req.on('data',(chunk)=>{
       data+=chunk
       // console.log(data)
-      let data1={};
       data1.id=data
       // console.log(data1)
-      join(data1).then(result => {
-        console.log(result);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+      join(data1)
+      .then(result => {
+        if(result===true){
+          text="아이디 생성이 가능합니다."
+        }
+        else{
+          text="중복된 아이디가 있습니다."
+        }
+        console.log("text: ", text)
+      })
+      .catch(error => {
+        console.error(error);
+      });
       
 
     })
     req.on('end',(chunk)=>{
-      
-      res.end()    
+      // let text =""
+      // join(data1)
+      // .then(result => {
+      //   if(result===true){
+      //     text="아이디 생성이 가능합니다!."
+      //   }
+      //   else{
+      //     text="중복된 아이디가 존재합니다!"
+      //   }
+      // })
+      // .catch(error => {
+      //   console.error(error);
+      // });
+      // console.log(text)
+      res.writeHead(200,'Content-Type','text/plain')
+      res.end(text)    
     })
   }
   
