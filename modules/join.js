@@ -9,60 +9,6 @@ import mysql from 'mysql2'
 //   email: "naver.com"
 // }
 
-// function join(object) {
-//   let connection = mysql.createPool({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'dD1354268!',
-//     port: 3306,
-//     database: 'gymwear'
-//   });
-//   function foo4(){
-//   connection.getConnection((err, conn) => {
-//     if (err) {
-//       console.err("DB연결 에러");
-//     } else {
-//       console.log("DB와 연결 완료");
-//       function foo3(){
-//         function a() {
-//       conn.query(`SELECT * FROM gymwear.new_table WHERE id ="${object.id}"`, (error, results) => {
-//         function foo2(){
-//         if (error) {  
-//           console.err("에러발생")
-//         } else {
-//           function foo(){
-//           if (results.length >= 1) {
-//             console.log("아이디 중복 발생")
-//             return  false
-//           } 
-//           else {
-//             return true
-//             // conn.query(`INSERT INTO gymwear.new_table(id, password, name, phone1, phone2, phone3, email) VALUES (
-//             //   '${object.id}', '${object.password}','${object.name}','${object.phon1}', '${object.phone2}','${object.phone3}','${object.email}'
-//             // )`, function (error, results1, fields) {
-//               // if (error) {
-//               //   console.err("데이터베이스에 데이터 쓰기 오류");
-//               // } else {
-//               //   console.log('회원가입 완료:', results1);
-//               // }
-//             //});
-//           }
-//         }
-//         return foo()
-//         }
-//       }
-//       conn.release();
-//       return foo2()
-//       })
-//     }
-//       return a()
-//     }
-//     return foo3()
-//   }
-//   });
-// }
-//   return foo4()
-// }
 function join(object) {
   let connection = mysql.createPool({
     host: 'localhost',
@@ -71,44 +17,39 @@ function join(object) {
     port: 3306,
     database: 'gymwear'
   });
+  let a =true
+  connection.getConnection((err, conn) => {
+    if (err) {
+      console.err("DB연결 에러");
+    } else {
+      console.log("DB와 연결 완료");
 
-  function foo4() {
-    connection.getConnection((err, conn) => {
-      if (err) {
-        console.err("DB연결 에러");
-      } else {
-        console.log("DB와 연결 완료");
-
-        function foo3() {
-          function a() {
-            conn.query(`SELECT * FROM gymwear.new_table WHERE id ="${object.id}"`, (error, results) => {
-              function foo2() {
-                if (error) {
-                  console.err("에러발생")
-                } else {
-                  function foo() {
-                    if (results.length >= 1) {
-                      console.log("아이디 중복 발생")
-                      return false;
-                    } else {
-                      return true;
-                    }
-                  }
-                  return foo();
-                }
-              }
-              conn.release();
-              return foo2();
-            })
+      conn.query(`SELECT * FROM gymwear.new_table WHERE id ="${object.id}"`, (error, results) => {
+        if (error) {  
+          console.err("에러발생")
+        } else {
+          if (results.length >= 1) {
+            console.log("아이디 중복 발생")
+            a=false;
+          } 
+          else {
+            return true
+            // conn.query(`INSERT INTO gymwear.new_table(id, password, name, phone1, phone2, phone3, email) VALUES (
+            //   '${object.id}', '${object.password}','${object.name}','${object.phon1}', '${object.phone2}','${object.phone3}','${object.email}'
+            // )`, function (error, results1, fields) {
+              // if (error) {
+              //   console.err("데이터베이스에 데이터 쓰기 오류");
+              // } else {
+              //   console.log('회원가입 완료:', results1);
+              // }
+            //});
           }
-          return a();
         }
-
-        return foo3();
-      }
-    });
-  }
-
-  return foo4();
+        conn.release();
+      })
+    }
+  });
+  return a
 }
+
 export default join
