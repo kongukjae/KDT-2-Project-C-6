@@ -17,13 +17,13 @@ function join(object) {
     port: 3306,
     database: 'gymwear'
   });
-  let a =""
+  function foo4(){
   connection.getConnection((err, conn) => {
     if (err) {
       console.err("DB연결 에러");
     } else {
       console.log("DB와 연결 완료");
-
+      function foo3(){
       conn.query(`SELECT * FROM gymwear.new_table WHERE id ="${object.id}"`, (error, results) => {
         function foo2(){
         if (error) {  
@@ -50,11 +50,16 @@ function join(object) {
         return foo()
         }
       }
-      console.log(foo2())
+      return foo2()
+      //console.log(foo2())
         conn.release();
       })
     }
+    return foo3()
+    }
   });
+}
+  return foo4()
 }
 
 export default join
