@@ -4,6 +4,7 @@ import join from './modules/join.js'
 import join2 from './modules/join2.js'
 import emailDulicateCheck from './modules/emailDulicateCheck.js'
 import loginCheck from './modules/loginFunction.js'
+import passwordValidCheck from './modules/passwordValidCheck.js'
 
 
 const server = http.createServer((req,res)=>{
@@ -193,20 +194,25 @@ const server = http.createServer((req,res)=>{
     })
 
   req.on('end',()=>{
-    join2(data1)
-    .then(result=>{
-        if(result===true){
-          res.writeHead(200,'text/plain')
-          res.end("회원가입 완료")
-        }
-        else{
-          res.writeHead(200,'text/plain')
-          res.end("회원가입 실패")
-        }
-    })
-    .catch(err=>{
-      console.err("err")
-    })
+    if(passwordValidCheck(data1.password)===false){
+      res.writeHead(200,'text/plain')
+      req.end("비밀번호는 영소문,대문,특수문자를 포함하여13자 이내로 입력해주세요")
+    }
+    else if(data1){}
+    // join2(data1)
+    // .then(result=>{
+    //     if(result===true){
+    //       res.writeHead(200,'text/plain')
+    //       res.end("회원가입 완료")
+    //     }
+    //     else{
+    //       res.writeHead(200,'text/plain')
+    //       res.end("회원가입 실패")
+    //     }
+    // })
+    // .catch(err=>{
+    //   console.err("err")
+    // })
   })
   }
   if(req.method==="POST" && req.url==="/idcheck"){
