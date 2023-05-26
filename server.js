@@ -191,17 +191,16 @@ const server = http.createServer((req,res)=>{
       data1.phone2=splitdata[5]
       data1.phone3=splitdata[6]
       data1.email=splitdata[7]
-      console.log(data1)
     })
 
-  req.on('end',()=>{
+  req.on('end',(chunk)=>{
     if(passwordValidCheck(data1.password)===false){
       res.writeHead(200,'text/plain')
-      res.end("비밀번호는 영소문,대문,특수문자를 포함하여13자 이내로 입력해주세요")
+      res.end('a')
     }
     else if(data1.password!==data1.passwordcheck){
       res.writeHead(200,'text/plain')
-      res.end("비밀번호가 맞지 않습니다. 확인 해 주세요.")
+      res.end('a')
     }
     else{
     join2(data1)
@@ -220,7 +219,7 @@ const server = http.createServer((req,res)=>{
     })
     }
   })
-  
+
   }
   if(req.method==="POST" && req.url==="/idcheck"){
     let data=""
