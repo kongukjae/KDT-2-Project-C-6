@@ -196,11 +196,11 @@ const server = http.createServer((req,res)=>{
   req.on('end',(chunk)=>{
     if(passwordValidCheck(data1.password)===false){
       res.writeHead(200,'text/plain')
-      res.end('a')
+      res.end("b")
     }
     else if(data1.password!==data1.passwordcheck){
       res.writeHead(200,'text/plain')
-      res.end('a')
+      res.end("c")
     }
     else{
     join2(data1)

@@ -312,7 +312,9 @@ root.children[0].children[3].children[3].children[1].type="submit"
 root.children[0].children[3].children[3].children[1].value="회원가입"
 console.dir(root.children[0].children[3].children[3].children[1])
 
-root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
+root.children[0].children[3].children[3].children[1].addEventListener('click',(e)=>{
+  e.preventDefault()
+  
   let data=""
   data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
@@ -332,10 +334,10 @@ root.children[0].children[3].children[3].children[1].addEventListener('click',()
       xhr.onload = function(){
         if(xhr.status===200){
           console.log(xhr.response)
-          if(xhr.response==='a'){
-            window.alert("비밀번호 조건 및 일치 확인이 필요합니다.")
+          if(xhr.response==='b' ||xhr.response==='c'){
+            alert("비밀번호 조건 및 일치 확인이 필요합니다.")
+            location.reload() //현재페이지 다시 로드
           // window.location.href="/join"
-
           }
           else{
           window.alert(xhr.response)
