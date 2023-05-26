@@ -17,7 +17,7 @@ function emailDulicateCheck(object) {
       } else {
         console.log("DB와 연결 완료");
 
-        conn.query(`SELECT * FROM gymwear.new_table WHERE id ="${object.email}"`, (error, results) => {
+        conn.query(`SELECT * FROM gymwear.new_table WHERE email ="${object.email}"`, (error, results) => {
           if (error) {
             console.error("에러발생");
             reject(error);
