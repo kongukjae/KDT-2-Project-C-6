@@ -3,6 +3,7 @@ import fs from 'fs'
 import join from './modules/join.js'
 import join2 from './modules/join2.js'
 import emailDulicateCheck from './modules/emailDulicateCheck.js'
+import loginCheck from './modules/loginFunction.js'
 
 
 const server = http.createServer((req,res)=>{
@@ -273,8 +274,26 @@ const server = http.createServer((req,res)=>{
 
   }
   if(req.method="POST" && req.url==="/loginfuntion"){
+    let data =""
+    let data1={}
     req.on('data',(chunk)=>{
-      
+      data+=chunk
+      let splitdata=data.split('&')
+      data1.id=splitdata[0]
+      data1.password=splitdata[1]
+    })
+    req.on('end',()=>{
+      loginCheck(data1).then(result=>{
+        if(result===true){
+          res.end(true)
+        }
+        else{
+          res.end(false)
+        }
+      })
+      .catch(result=>{
+        res.end("오류")
+      })
     })
   }
 })

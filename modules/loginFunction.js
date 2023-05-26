@@ -65,3 +65,4 @@ function loginCheck(object) {
 }
 
 //loginCheck(data).then(result=>{console.log(result)}).catch(result=>{console.log(result)})
+export default loginCheck
