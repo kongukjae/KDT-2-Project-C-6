@@ -272,6 +272,11 @@ const server = http.createServer((req,res)=>{
     })
 
   }
+  if(req.method="POST" && req.url==="/loginfuntion"){
+    req.on('data',(chunk)=>{
+      
+    })
+  }
 })
 
    

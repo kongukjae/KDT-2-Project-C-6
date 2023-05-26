@@ -196,6 +196,26 @@ makeTag(root.children[0].children[3].children[3],"div","70%","100%")
 root.children[0].children[3].children[3].children[1].style.backgroundColor="gray"
 root.children[0].children[3].children[3].children[1].innerText="로그인"
 root.children[0].children[3].children[3].children[1].style.textAlign="center"
+root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
+  let data = ""
+  data = root.children[0].children[3].children[1].children[2].children[1].vlaue+"&"+
+  root.children[0].children[3].children[1].children[2].children[3].vlaue
+
+  let xhr = new XMLHttpRequest();
+  let url = 'http://localhost:3000/loginfuntion';  // 요청할 URL을 지정합니다.
+
+      xhr.open('POST', url, true);  // POST 요청을 설정합니다.
+      xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
+      xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
+      xhr.onload = function(){
+        if(xhr.status===200){
+          console.log(xhr.response)
+          }
+        else{
+          console.err("에러발생",xhr.status)
+         }
+        }
+})
 
 
 makeTag(root.children[0].children[3].children[3],"div","15%","100%")
