@@ -193,7 +193,6 @@ root.children[0].children[3].children[1].children[2].children[1].children[3].add
       xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
       xhr.onload = function(){
         if(xhr.status===200){
-          console.log(xhr.response)
           window.alert(xhr.response)
           }
         else{
@@ -268,6 +267,7 @@ root.children[0].children[3].children[1].children[2].children[11].children[2].in
 root.children[0].children[3].children[1].children[2].children[11].children[2].addEventListener('click',()=>{
 
   let data=""
+  
   data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[7].children[1].value + "&" +
@@ -316,6 +316,7 @@ root.children[0].children[3].children[3].children[1].addEventListener('click',()
   let data=""
   data= root.children[0].children[3].children[1].children[2].children[1].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[3].children[1].value + "&" +
+        root.children[0].children[3].children[1].children[2].children[5].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[7].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[9].children[1].value + "&" +
         root.children[0].children[3].children[1].children[2].children[9].children[3].value + "&" +
@@ -330,8 +331,16 @@ root.children[0].children[3].children[3].children[1].addEventListener('click',()
       xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
       xhr.onload = function(){
         if(xhr.status===200){
+          if(xhr.response="비밀번호는 영소문,대문,특수문자를 포함하여13자 이내로 입력해주세요"){
           window.alert(xhr.response)
-          window.location.href="/login"
+          }
+          else if(xhr.response="비밀번호가 맞지 않습니다. 확인 해 주세요."){
+            window.alert(xhr.response)
+          }
+          else{
+            window.alert(xhr.response)
+            window.location.href="/login"
+          }
           }
         else{
           console.err("에러발생",xhr.status)

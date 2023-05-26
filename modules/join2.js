@@ -1,6 +1,7 @@
 import mysql from 'mysql2'
 
 function join2(object) {
+  
    return new Promise((resolve,reject)=>{
         let connection = mysql.createPool({
             host: 'localhost',
