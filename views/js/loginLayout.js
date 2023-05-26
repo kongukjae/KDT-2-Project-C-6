@@ -187,7 +187,7 @@ root.children[0].children[3].children[1].children[2].children[2].style.backgroun
 root.children[0].children[3].children[1].children[2].children[4].style.backgroundColor="gray"
 root.children[0].children[3].children[1].children[2].children[6].style.backgroundColor="gray"
 
-
+root.children[0].children[3].children[1].children[2].children[3].type="password"
 makeTag(root.children[0].children[3],"div","100%","2%")
 //*로그인 버튼
 makeTag(root.children[0].children[3],"div","100%","15%","flex")

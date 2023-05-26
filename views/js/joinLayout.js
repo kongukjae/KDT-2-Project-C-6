@@ -177,6 +177,7 @@ makeTag(root.children[0].children[3].children[1].children[2],"div","100%","10%",
 makeTag(root.children[0].children[3].children[1].children[2].children[1],"div","30%","100%","")
 root.children[0].children[3].children[1].children[2].children[1].children[0].innerText="아이디*"
 makeTag(root.children[0].children[3].children[1].children[2].children[1],"input","40%","100%","")
+root.children[0].children[3].children[1].children[2].children[1].children[1].placeholder="아이디를 입력해주세요"
 root.children[0].children[3].children[1].children[2].children[1].children[1].name="id"
 makeTag(root.children[0].children[3].children[1].children[2].children[1],"div","5%","100%","")
 makeTag(root.children[0].children[3].children[1].children[2].children[1],"button","25%","100%","")
@@ -210,6 +211,10 @@ makeTag(root.children[0].children[3].children[1].children[2].children[3],"div","
 root.children[0].children[3].children[1].children[2].children[3].children[0].innerText="비밀번호*"
 makeTag(root.children[0].children[3].children[1].children[2].children[3],"input","70%","100%","")
 root.children[0].children[3].children[1].children[2].children[3].children[1].name="psword"
+root.children[0].children[3].children[1].children[2].children[3].children[1].placeholder="특수문자,영문,영문 대문자 포함13이내"
+root.children[0].children[3].children[1].children[2].children[3].children[1].type="password"
+
+
 //* ----------------------------------------------------------------------------------------------
 
 makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
@@ -219,6 +224,10 @@ makeTag(root.children[0].children[3].children[1].children[2].children[5],"div","
 root.children[0].children[3].children[1].children[2].children[5].children[0].innerText="비밀번호 확인"
 makeTag(root.children[0].children[3].children[1].children[2].children[5],"input","70%","100%")
 root.children[0].children[3].children[1].children[2].children[5].children[1].name="pswordcheck"
+root.children[0].children[3].children[1].children[2].children[5].children[1].placeholder="특수문자,영문,영문 대문자 포함13이내"
+root.children[0].children[3].children[1].children[2].children[5].children[1].type="password"
+
+
 //* ----------------------------------------------------------------------------------------------
 makeTag(root.children[0].children[3].children[1].children[2],"div","100%","5%")
 //* 이름----------------------------------------------------------------------------------------------
