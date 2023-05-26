@@ -2,6 +2,7 @@ import http from 'http'
 import fs from 'fs' 
 import join from './modules/join.js'
 import join2 from './modules/join2.js'
+import emailDulicateCheck from './modules/emailDulicateCheck.js'
 
 
 const server = http.createServer((req,res)=>{
@@ -237,7 +238,40 @@ const server = http.createServer((req,res)=>{
       });
     })
   }
-  
+  if(req.method==="POST" && req.url==="/emailDuplicateCheck"){
+    let data=""
+    let data1={};
+    req.on('data',(chunk)=>{
+      data+=chunk
+      let splitdata = data.split('&')
+      data1.id=splitdata[0]
+      data1.password=splitdata[1]
+      data1.name=splitdata[2]
+      data1.phone1=splitdata[3]
+      data1.phone2=splitdata[4]
+      data1.phone3=splitdata[5]
+      data1.email=splitdata[6]      
+      console.log(data1)
+    })
+    req.on('end',(chunk)=>{
+      emailDulicateCheck(data1)
+      .then(result => {
+        if(result===true){
+          res.writeHead(200,'Content-Type','text/plain')
+          res.end('이메일이 사용 가능합니다')    
+        }
+        else{
+          res.writeHead(200,'Content-Type','text/plain')
+          res.end('이메일 사용이 불가능합니다.')
+        }
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    })
+
+  }
 })
 
    
