@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.3.0",
+    "@types/react": "^18.2.11",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
