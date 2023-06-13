@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/kongukjae/KDT-2-Project-C-6#readme",
   "dependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "babel-loader": "^9.1.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.2.4",
     "react": "^18.2.0",
