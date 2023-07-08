@@ -1,4 +1,3 @@
-import {makeTag,makeItems} from './core.mjs'
 
 let root = document.getElementById('root');
 let listOnOff = true;
@@ -188,7 +187,7 @@ root.children[0].children[3].children[1].children[2].children[2].style.backgroun
 root.children[0].children[3].children[1].children[2].children[4].style.backgroundColor="gray"
 root.children[0].children[3].children[1].children[2].children[6].style.backgroundColor="gray"
 
-
+root.children[0].children[3].children[1].children[2].children[3].type="password"
 makeTag(root.children[0].children[3],"div","100%","2%")
 //*로그인 버튼
 makeTag(root.children[0].children[3],"div","100%","15%","flex")
@@ -197,6 +196,32 @@ makeTag(root.children[0].children[3].children[3],"div","70%","100%")
 root.children[0].children[3].children[3].children[1].style.backgroundColor="gray"
 root.children[0].children[3].children[3].children[1].innerText="로그인"
 root.children[0].children[3].children[3].children[1].style.textAlign="center"
+root.children[0].children[3].children[3].children[1].addEventListener('click',()=>{
+  let data = ""
+  data = root.children[0].children[3].children[1].children[2].children[1].value+"&"+
+  root.children[0].children[3].children[1].children[2].children[3].value
+
+  let xhr = new XMLHttpRequest();
+  let url = 'http://localhost:3000/loginfuntion';  // 요청할 URL을 지정합니다.
+
+      xhr.open('POST', url, true);  // POST 요청을 설정합니다.
+      xhr.setRequestHeader('Content-Type', 'text/plain');  // 요청 헤더에 Content-Type을 설정합니다.
+      xhr.send(data);  // 데이터를 문자열로 변환하여 요청 본문에 포함시킵니다.
+      console.log(data)
+      xhr.onload = function(){
+        if(xhr.status===200){
+          if(xhr.response){
+            window.location.href="/mypage"
+          }
+          else{
+            window.alert("로그인에 실패하였습니다.")
+          }
+          }
+        else{
+          console.err("에러발생",xhr.status)
+         }
+        }
+})
 
 
 makeTag(root.children[0].children[3].children[3],"div","15%","100%")
@@ -216,6 +241,9 @@ root.children[0].children[3].children[5].children[2].style.textAlign="center"
 makeTag(root.children[0].children[3].children[5],"div","30%","100%")
 root.children[0].children[3].children[5].children[3].innerText="회원가입"
 root.children[0].children[3].children[5].children[3].style.textAlign="center"
+root.children[0].children[3].children[5].children[3].addEventListener('click',()=>{
+  window.location.href="/join"
+})
 
 makeTag(root.children[0].children[3].children[5],"div","5%","100%")
 

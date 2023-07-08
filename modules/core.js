@@ -50,5 +50,3 @@ console.dir(imgTag)
   target.style.gridTemplateRows="50%";
 
 }
-
-// export {makeTag,makeItems} 
